@@ -1,0 +1,50 @@
+.loginReg {
+	.formDiv {
+		@extend .leftAlign;
+	 	height: 28em; 
+		margin-bottom: 2%;
+		width: 49.75%;
+	}
+	
+	.container > p {
+		margin-bottom:25px;
+	}
+	
+	td p {
+		display: table-cell;
+		text-align: left;
+	}
+	
+	
+	td {
+		font-size: 16px;
+	  padding: 10px;
+		text-align: center;
+	}
+	
+	th{
+	  font-size: 24px;
+    padding: 10px;
+	}
+	
+	.verticalTable {
+		position: relative;
+		top: 75px;
+	}
+	
+	.verticalLine {
+	  @extend .leftAlign;
+		background-color:#ccc;
+		height:28em;
+		width:0.1%;
+	}
+	
+	input,textarea{
+    width:200px;
+  }
+  
+  input,textarea{
+    display:inline-block;
+    width:200px;
+  }
+}

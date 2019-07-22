@@ -1,0 +1,101 @@
+<div ng-controller="NavigationController">
+	<ng-include src="'partials/guestHeader.html'" onload="setActiveHeader('nav4')"></ng-include>
+</div>
+
+<div class="contact">
+	<div class="container">
+		<p class="msg">
+			<span id="msg"></span>
+		</p>
+		<div class="centerElements center">
+			<article class="contactDiv">
+				<section>
+					<h3>Company Address</h3>
+					<p>Book World</p>
+					<p>12, ABC Street</p>
+					<p>DEF Location</p>
+					<p>Indore-452001 (M.P.)</p>
+				</section>
+				<section>
+					<h3>Customer Care</h3>
+					<p>Phone:</p>
+					<p>1800-18001800</p>
+					<p class="linebreak">Email :</p>
+					<p>bookworld.care2014@gmail.com</p>
+				</section>
+			</article>
+			<div class="verticalLine"></div>
+			<div class="contactDiv" ng-controller="ContactController">
+				<form ng-submit="sendFeedback()">
+					<table>
+						<tr>
+							<th colspan="2">Customer Support Form</th>
+						</tr>
+						<tr>
+							<td>
+							<p>
+								Name <span class="required">*</span> 
+							</p></td>
+							<td>
+							<input type="text" size="25" value=""
+							ng-model="user.userName" required />
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<p>
+								Email <span class="required">*</span> 
+							</p></td>
+							<td>
+							<input type="email" size="25" value=""
+							ng-model="user.userEmail" placeholder="someone@domain.com"
+							required />
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<p>
+								Contact <span class="required">*</span> 
+							</p></td>
+							<td>
+							<input type="tel" title="Enter your 10 digit contact no." placeholder="10 digit contact no" pattern="\d{10}" size="25" value=""
+							ng-model="user.userContact" onkeypress="return restrictContact(event);" required />
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<p>
+								Subject <span class="required">*</span> 
+							</p></td>
+							<td>
+							<input type="text" size="25" value=""
+							ng-model="mail.mailSubject" required />
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<p>
+								Message <span class="required">*</span> 
+							</p></td>
+							<td>
+							<p>
+								<textarea rows="5" cols="20"
+										ng-model="mailBody" required></textarea>
+							</p></td>
+						</tr>
+						
+						<tr>
+							<td colspan="2">
+								<input type="submit" value="Submit" />
+								<input type="reset" value="Reset" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	trimWhiteSpace();
+</script>

@@ -1,0 +1,17 @@
+<div id="bookDetailsDialog">
+	<div class="leftAlign dialogImgDiv">
+		<img src="data:image/png;base64,{{bookDetails.bookCover}}"></img>
+	</div>
+	<div class="leftAlign dialogContentDiv">
+		<p><span>Book No. :</span> {{bookDetails.bookNo}}</p>
+		<p><span>Book Title. :</span> {{bookDetails.bookTitle}}</p>
+		<p><span>BookCategory : </span>{{bookDetails.bookCategory}}</p>
+		<p><span>BookPublisher : </span>{{bookDetails.bookPublisher}}</p>
+		<p><span>BookDescription : </span>{{bookDetails.bookDescription}}</p>
+	</div>
+	<div class="btnsDiv">
+		<input ng-hide="isBookmarked[bookDetails.bookNo]" type="button" value="Bookmark" ng-click="addBookmark($event)" data="{{bookDetails.bookNo}}" />
+		<input ng-show="isBookmarked[bookDetails.bookNo]" type="button" value="Unbookmark" ng-click="removeBookmark($event)" data="{{bookDetails.bookNo}}"/>
+		<input type="button" value="Write Review" ng-click="showRatingsDialog()"/></div>
+	<div class="clearFloat"> </div>
+</div>

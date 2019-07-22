@@ -1,0 +1,48 @@
+<div class="modifyRequest" ng-controller="ModifyRequestController">
+	<section ng-hide="$scope.requestsList.length==0">
+		<table ng-table="modifyRequestTable" show-filter="true">
+			<tr ng-repeat="bookRequest in $data">
+				<td data-title="'Request No'" sortable="'request.requestNo'" filter="{ 'requestNo' : 'text' }">{{bookRequest.request.requestNo}}</td>
+				<td data-title="'User Email'" sortable="'request.userEmail'" filter="{ 'userEmail': 'text' }">{{bookRequest.request.userEmail}}</td>
+				<td data-title="'Book No'" sortable="'book.bookNo'" filter="{ 'bookNo': 'text' }">{{bookRequest.book.bookNo}}</td>
+				<td data-title="'Book Title'" sortable="'book.bookTitle'" filter="{ 'bookTitle': 'text' }">{{bookRequest.book.bookTitle}}</td>
+				<td data-title="'Delivery Status'" sortable="'request.deliveryStatus'" filter="{ 'deliveryStatus': 'select' }" filter-data="deliveryComboBox()">
+					<select ng-model="reqDelivery[bookRequest.request.requestNo]" ng-disabled="requestsList[requestIndex[bookRequest.request.requestNo]].request.deliveryStatus!='PENDING'">
+						<option value="PENDING">Pending</option>
+						<option value="CANCELLED">Cancelled</option>
+						<option value="CLOSED">Closed</option>
+					</select>
+				</td>
+				<td data-title="'Return Status'" sortable="'request.returnStatus'" filter="{ 'returnStatus': 'select' }" filter-data="returnComboBox()">
+					<select ng-model="reqReturn[bookRequest.request.requestNo]" ng-disabled="requestsList[requestIndex[bookRequest.request.requestNo]].request.returnStatus!='PENDING'">
+						<option value="NOT INITIATED" ng-hide="requestsList[requestIndex[bookRequest.request.requestNo]].request.returnStatus=='PENDING'">Not Initiated</option>
+						<option value="PENDING">Pending</option>
+						<option value="CANCELLED">Cancelled</option>
+						<option value="CLOSED">Closed</option>
+					</select>
+				</td>
+				<td data-title="'Address'">{{bookRequest.subRequest.subRequestAddress}}</td>
+				<td data-title="'Contact'">{{bookRequest.subRequest.subRequestContact}}</td>
+				<td class="tdEdit" data-title="'Edit'">
+					<a href="javascript:void(0)" title="Click to Update Changes" ng-click="displayRequestCancelDialog(bookRequest.request.requestNo)"><img ng-src="images/right.png" ng-show="reqDelivery[bookRequest.request.requestNo]=='CANCELLED' || reqReturn[bookRequest.request.requestNo]=='CANCELLED'" /></a>
+					<a href="javascript:void(0)" title="Click to Update Changes" ng-click="updateChanges(bookRequest.request.requestNo)"><img ng-src="images/right.png" ng-hide="reqDelivery[bookRequest.request.requestNo]=='CANCELLED' || reqReturn[bookRequest.request.requestNo]=='CANCELLED'" /></a>
+					<a href="javascript:void(0)" title="Click to Reset Changes" ng-click="resetChanges(bookRequest.request.requestNo)"><img ng-src="images/wrong.png" /></a>
+				</td>
+			</tr>
+		</table>
+	</section> 
+	<h3 ng-show="$scope.requestsList.length==0">No requests found</h3>
+	<div id="requestCancelDialog" ng-show="showRequestCancelDialog">
+		<div>
+			<a href="javascript:void(0)" ng-click="hideRequestCancelDialog()"></a>
+			<h4>Reason For Cancelling Request<span class="required">*</span></h4>
+			<form ng-submit="cancelRequestAction()">
+				<p><textarea ng-model="cancelReason" rows="5" cols="20" required></textarea></p>
+	 	 		<p><input type="submit" value="Confirm Cancel" /></p>
+			</form>
+		</div>
+	</div>
+</div>
+<script>
+	trimWhiteSpace();
+</script>

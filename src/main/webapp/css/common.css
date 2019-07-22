@@ -1,0 +1,952 @@
+body {
+  font-family: "Times New Roman", Georgia, Serif;
+  margin: 15px auto 0px auto;
+  min-width: 980px;
+  padding: 0px 0px 48px 0px; }
+
+.rightAlign, #userDetailsDialog div a, .booksHistory #subRequestsDialog div a, #requestCancelDialog div a, .bookRating .userBookRating, .bookRating .reviewRating {
+  float: right; }
+
+.leftAlign, .nav > li, article.leftContainer, article.mainContainer, .guestHome .thumbnail, .userHome .thumbnail, .loginReg .formDiv, .loginReg .verticalLine, .contact .verticalLine, .subscription article section, .newSubscription article section, .activeSubscription article section, .userHeader .dropDown ul li, .bookRating .reviewInput, .bookRating .reviewDescription {
+  float: left; }
+
+.clearFloat, .row, .row:after, footer img:after, #bookDetailsDialog .btnsDiv, .activeSubscription article {
+  clear: both; }
+
+::-webkit-input-placeholder {
+  font-style: italic; }
+
+::-moz-placeholder {
+  font-style: italic; }
+
+/* firefox 19+ */
+:-ms-input-placeholder {
+  font-style: italic; }
+
+/* ie */
+input:-moz-placeholder {
+  font-style: italic; }
+
+a {
+  outline: none 0px;
+  text-decoration: none; }
+
+img {
+  border: 0px; }
+
+header, .container, .nav, footer > div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%; }
+
+.container {
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+.container::after {
+  clear: both;
+  content: "";
+  display: block; }
+
+.center, .centerElements * {
+  margin-left: auto;
+  margin-right: auto; }
+
+nav {
+  background-color: #eee;
+  display: block;
+  margin-bottom: 0.75%; }
+
+.nav {
+  list-style: none; }
+
+.nav > li > a {
+  color: #000;
+  display: block;
+  padding: 10px 30px;
+  text-decoration: none; }
+
+.nav > li > a:first-of-type {
+  padding-left: 15px; }
+
+.nav > li > a:hover, .nav > li > a:focus, .nav > li.active > a:hover, .nav > li.active > a:focus {
+  background-color: #4b545f;
+  /* background-color: #bbb; */
+  color: #fff; }
+
+.nav > li.active > a {
+  background-color: #eee;
+  color: #000;
+  font-weight: bold; }
+
+.row:before, .row:after {
+  content: " ";
+  display: block; }
+
+footer {
+  background-color: #eee;
+  bottom: 0px;
+  display: block;
+  height: 40px;
+  padding-bottom: 8px;
+  left: 0px;
+  position: fixed;
+  right: 0px;
+  text-align: center; }
+
+footer img {
+  float: right;
+  height: 40px;
+  width: 40px; }
+
+footer span {
+  display: inline-block;
+  font-size: 11px;
+  padding-top: 20px; }
+
+form.search > select, form.search > input {
+  font-family: "Times New Roman", Georgia, Serif;
+  font-size: large; }
+
+form.search > select {
+  background-color: #F6F6F6; }
+
+.msg {
+  font-size: medium;
+  font-weight: bold;
+  text-align: center; }
+
+.msg span.error, .msg span.success, .msg span.info {
+  border-radius: 15px;
+  border-style: double;
+  border-width: 5px;
+  padding: 15px; }
+
+.msg span.error {
+  background-color: rgba(255, 0, 0, 0.02);
+  border-color: red;
+  color: red; }
+
+.msg span.success {
+  background-color: rgba(0, 255, 0, 0.02);
+  border-color: green;
+  color: green; }
+
+.msg span.info {
+  background-color: rgba(0, 0, 255, 0.02);
+  border-color: #0000AA;
+  color: #0000AA; }
+
+span.required {
+  color: #FF0000; }
+
+.formHeading {
+  font-size: 24px;
+  font-weight: bold; }
+
+.panel {
+  background-color: #fff;
+  border: 1px solid;
+  border-color: #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px; }
+
+.panel-body {
+  padding: 10px;
+  text-align: left; }
+
+.panel-heading {
+  background-color: #eee;
+  color: #333;
+  padding: 0px 15px;
+  text-align: center; }
+
+.panel-heading h3 {
+  margin: 0px;
+  padding: 10px 0px; }
+
+.categories li a {
+  display: block; }
+
+.categories a:visited, .categories a:link {
+  color: #000;
+  text-decoration: none; }
+
+.categories li:hover {
+  background-color: #E1E1E1; }
+
+.categories li {
+  list-style: none;
+  padding-top: 5px; }
+
+.categories li.active {
+  font-weight: bold;
+  text-decoration: underline; }
+
+.categories .panel-body {
+  font-size: 20px;
+  max-height: 290px;
+  overflow: auto;
+  padding-top: 0%; }
+
+.categories ul {
+  padding-left: 0%; }
+
+article.leftContainer {
+  width: 16%; }
+
+article.mainContainer {
+  margin-left: 2%;
+  width: 82%; }
+
+.ui-widget-header {
+  background-color: #F6F6F6;
+  border: 1px solid #c0c0c0; }
+
+.ui-widget {
+  font-family: "Times New Roman"; }
+
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+  color: #888; }
+
+.ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  color: #000; }
+
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+  color: #000; }
+
+.ui-tabs-panel {
+  background-color: #FFF; }
+
+.ui-widget-header {
+  color: #000; }
+
+.ui-widget-header .ui-icon {
+  background-image: url("../images/ui-icons.png"); }
+
+.ng-pristine {
+  box-shadow: none; }
+
+.thumbnail img {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: block;
+  padding: 4px;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out; }
+
+.thumbnail .caption {
+  text-align: center; }
+
+#userDetailsDialog, .booksHistory #subRequestsDialog, #requestCancelDialog {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  height: 100%;
+  left: 0px;
+  position: fixed;
+  text-align: center;
+  top: 0px;
+  width: 100%;
+  z-index: 1000; }
+  #userDetailsDialog div, .booksHistory #subRequestsDialog div, #requestCancelDialog div {
+    background-color: #f8f8ff;
+    box-shadow: 10px 10px 5px #808080;
+    margin: 200px auto 0px auto;
+    padding: 15px;
+    text-align: center;
+    width: 300px; }
+    #userDetailsDialog div textarea, .booksHistory #subRequestsDialog div textarea, #userDetailsDialog div input, .booksHistory #subRequestsDialog div input, #requestCancelDialog div textarea, #requestCancelDialog div input {
+      vertical-align: middle; }
+    #userDetailsDialog div a, .booksHistory #subRequestsDialog div a, #requestCancelDialog div a {
+      background-image: url("../images/closeImg.png");
+      background-size: 25px 25px;
+      background-repeat: no-repeat;
+      height: 25px;
+      width: 25px; }
+    #userDetailsDialog div a:hover, .booksHistory #subRequestsDialog div a:hover, #requestCancelDialog div a:hover {
+      background-image: url("../images/closeImg1.png"); }
+    #userDetailsDialog div a::after, .booksHistory #subRequestsDialog div a::after, #requestCancelDialog div a::after {
+      clear: both; }
+    #userDetailsDialog div p label, .booksHistory #subRequestsDialog div p label, #requestCancelDialog div p label {
+      display: inline-block;
+      text-align: left;
+      width: 100px; }
+    #userDetailsDialog div p textarea, .booksHistory #subRequestsDialog div p textarea, #userDetailsDialog div p input, .booksHistory #subRequestsDialog div p input, #requestCancelDialog div p textarea, #requestCancelDialog div p input {
+      display: inline-block;
+      width: 150px; }
+
+.ngdialog.ngdialog-theme-plain .ngdialog-content {
+  width: 85%; }
+
+.ngdialog.ngdialog-theme-plain {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  border-radius: 0px;
+  width: 700px; }
+
+input, textarea {
+  display: inline-block;
+  width: 200px; }
+
+textarea {
+  height: 75px; }
+
+.rightTextAlign {
+  text-align: right !important; }
+
+input[type="submit"], input[type="reset"], input[type="button"] {
+  margin-left: 12px;
+  margin-right: 12px;
+  width: 110px !important; }
+
+#forgotPassword {
+  margin: 30px;
+  position: relative;
+  text-align: center; }
+  #forgotPassword img {
+    margin: 0px auto;
+    height: 75px;
+    left: 50%;
+    position: absolute;
+    top: -25px;
+    width: 75px; }
+
+#httpLoadingProcessDiv, #ajaxLoadingProcessDiv {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  left: 0px;
+  position: fixed;
+  text-align: center;
+  top: 0px;
+  width: 100%;
+  z-index: 20000; }
+  #httpLoadingProcessDiv img, #ajaxLoadingProcessDiv img {
+    height: 75px;
+    margin-top: 250px;
+    width: 75px; }
+
+#ajaxLoadingProcessDiv {
+  display: none; }
+
+.contact #loadingProcessDiv {
+  display: none; }
+
+textarea {
+  resize: none; }
+
+.guestHome .information .panel-body, .userHome .information .panel-body {
+  font-size: 20px;
+  overflow: auto; }
+.guestHome .thumbnail, .userHome .thumbnail {
+  display: block;
+  font-size: 14px;
+  margin: 0px 1.2%;
+  width: 10%; }
+.guestHome .thumbnail img, .userHome .thumbnail img {
+  height: 150px;
+  width: 100%; }
+.guestHome #booksTabs, .userHome #booksTabs {
+  margin-top: 2%; }
+.guestHome .ui-tabs .ui-tabs-panel, .userHome .ui-tabs .ui-tabs-panel {
+  height: 220px;
+  text-align: center;
+  overflow: auto; }
+.guestHome .information, .userHome .information {
+  margin-top: 2%; }
+.guestHome .information li, .userHome .information li {
+  list-style: square;
+  padding-top: 0.25%; }
+.guestHome article.mainContainer > img, .userHome article.mainContainer > img {
+  width: 100%;
+  height: 280px; }
+.guestHome article, .userHome article {
+  overflow: auto; }
+.guestHome .panel-body td, .userHome .panel-body td {
+  text-align: left; }
+.guestHome .login .panel-body *, .userHome .login .panel-body * {
+  width: 100%; }
+.guestHome .login .halfWidth, .userHome .login .halfWidth {
+  width: 50%; }
+  .guestHome .login .halfWidth input[type="submit"], .userHome .login .halfWidth input[type="submit"] {
+    margin: 0px;
+    padding: 0px; }
+.guestHome .login .halfWidth:nth-last-child(1), .userHome .login .halfWidth:nth-last-child(1) {
+  text-align: right; }
+.guestHome .login .center, .userHome .login .center {
+  text-align: center;
+  padding-top: 10px; }
+
+#bookDetailsDialog {
+  margin-top: 15px; }
+  #bookDetailsDialog .dialogImgDiv {
+    margin-right: 50px;
+    width: 200px; }
+    #bookDetailsDialog .dialogImgDiv img {
+      height: 250px;
+      width: 200px; }
+  #bookDetailsDialog .dialogContentDiv {
+    font-size: 20px;
+    text-align: justify;
+    width: 400px; }
+    #bookDetailsDialog .dialogContentDiv span {
+      font-size: 21px;
+      font-weight: bold; }
+    #bookDetailsDialog .dialogContentDiv p:first-of-type {
+      margin-top: 0px; }
+
+.loginReg .formDiv {
+  height: 28em;
+  margin-bottom: 2%;
+  width: 49.75%; }
+.loginReg .container > p {
+  margin-bottom: 25px; }
+.loginReg td p {
+  display: table-cell;
+  text-align: left; }
+.loginReg td {
+  font-size: 16px;
+  padding: 10px;
+  text-align: center; }
+.loginReg th {
+  font-size: 24px;
+  padding: 10px; }
+.loginReg .verticalTable {
+  position: relative;
+  top: 75px; }
+.loginReg .verticalLine {
+  background-color: #ccc;
+  height: 28em;
+  width: 0.1%; }
+.loginReg input, .loginReg textarea {
+  width: 200px; }
+.loginReg input, .loginReg textarea {
+  display: inline-block;
+  width: 200px; }
+
+.about .container {
+  font-size: 20px;
+  text-align: justify; }
+.about section {
+  margin: 10px 0px; }
+
+.contact {
+  position: relative; }
+  .contact .contactDiv {
+    float: left;
+    height: 32em;
+    margin-bottom: 2%;
+    width: 49.75%; }
+  .contact .verticalLine {
+    background-color: #ccc;
+    height: 30em;
+    width: 0.1%; }
+  .contact .container > p {
+    margin-bottom: 25px; }
+  .contact .contactDiv:first-of-type section {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50px;
+    width: 40%; }
+    .contact .contactDiv:first-of-type section p {
+      font-size: 18px;
+      margin-bottom: 0px; }
+    .contact .contactDiv:first-of-type section p + p {
+      margin: 0px; }
+    .contact .contactDiv:first-of-type section .linebreak {
+      margin-top: 10px; }
+  .contact td p {
+    text-align: left; }
+  .contact td {
+    font-size: 16px;
+    padding: 5px;
+    text-align: center; }
+  .contact th {
+    font-size: 24px;
+    padding: 10px; }
+  .contact .loadingImgDiv {
+    display: none;
+    position: absolute;
+    text-align: center;
+    top: 150px;
+    width: 85%; }
+    .contact .loadingImgDiv img {
+      height: 75px;
+      width: 75px; }
+
+.subscription article, .newSubscription article, .activeSubscription article {
+  width: 80%; }
+  .subscription article section, .newSubscription article section, .activeSubscription article section {
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 30%; }
+    .subscription article section h2, .newSubscription article section h2, .activeSubscription article section h2 {
+      margin-top: 0px;
+      margin-bottom: 0px; }
+    .subscription article section .panel-body, .newSubscription article section .panel-body, .activeSubscription article section .panel-body {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center; }
+      .subscription article section .panel-body .imp, .newSubscription article section .panel-body .imp, .activeSubscription article section .panel-body .imp {
+        font-size: 36px; }
+      .subscription article section .panel-body button, .newSubscription article section .panel-body button, .activeSubscription article section .panel-body button {
+        font-size: 24px;
+        font-weight: bold; }
+  .subscription article .panel-heading h2, .newSubscription article .panel-heading h2, .activeSubscription article .panel-heading h2 {
+    margin-top: 0px;
+    padding-top: 15px; }
+
+.searchPage article.booksResult, .userSearchPage article.booksResult, .bookmark article.booksResult, .currentlyHeldBooks article.booksResult {
+  margin: 50px auto 30px auto;
+  width: 100%;
+  word-wrap: break-word; }
+  .searchPage article.booksResult .booksHead, .userSearchPage article.booksResult .booksHead, .bookmark article.booksResult .booksHead, .currentlyHeldBooks article.booksResult .booksHead {
+    background-color: #333333;
+    color: #fff;
+    font-size: bold;
+    width: 100%; }
+    .searchPage article.booksResult .booksHead span, .userSearchPage article.booksResult .booksHead span, .bookmark article.booksResult .booksHead span, .currentlyHeldBooks article.booksResult .booksHead span {
+      font-weight: bold;
+      text-align: center; }
+    .searchPage article.booksResult .booksHead span.bookTitle, .userSearchPage article.booksResult .booksHead span.bookTitle, .bookmark article.booksResult .booksHead span.bookTitle, .currentlyHeldBooks article.booksResult .booksHead span.bookTitle {
+      text-align: center; }
+    .searchPage article.booksResult .booksHead span.bookDescription, .userSearchPage article.booksResult .booksHead span.bookDescription, .bookmark article.booksResult .booksHead span.bookDescription, .currentlyHeldBooks article.booksResult .booksHead span.bookDescription {
+      text-align: center; }
+  .searchPage article.booksResult img, .userSearchPage article.booksResult img, .bookmark article.booksResult img, .currentlyHeldBooks article.booksResult img {
+    height: 150px;
+    width: 100%; }
+  .searchPage article.booksResult span, .userSearchPage article.booksResult span, .bookmark article.booksResult span, .currentlyHeldBooks article.booksResult span {
+    display: inline-block;
+    padding: 2px 5px;
+    text-align: center;
+    vertical-align: middle; }
+  .searchPage article.booksResult .booksBody, .userSearchPage article.booksResult .booksBody, .bookmark article.booksResult .booksBody, .currentlyHeldBooks article.booksResult .booksBody {
+    max-height: 670px;
+    overflow: auto;
+    width: 100%; }
+    .searchPage article.booksResult .booksBody .booksBodyCell:nth-of-type(even), .userSearchPage article.booksResult .booksBody .booksBodyCell:nth-of-type(even), .bookmark article.booksResult .booksBody .booksBodyCell:nth-of-type(even), .currentlyHeldBooks article.booksResult .booksBody .booksBodyCell:nth-of-type(even) {
+      background-color: #EEE; }
+  .searchPage article.booksResult .bookNo, .userSearchPage article.booksResult .bookNo, .bookmark article.booksResult .bookNo, .currentlyHeldBooks article.booksResult .bookNo {
+    width: 5%; }
+  .searchPage article.booksResult .bookCover, .userSearchPage article.booksResult .bookCover, .bookmark article.booksResult .bookCover, .currentlyHeldBooks article.booksResult .bookCover {
+    width: 7%; }
+  .searchPage article.booksResult .bookTitle, .userSearchPage article.booksResult .bookTitle, .bookmark article.booksResult .bookTitle, .currentlyHeldBooks article.booksResult .bookTitle {
+    text-align: left;
+    width: 13%; }
+  .searchPage article.booksResult .bookAuthor, .userSearchPage article.booksResult .bookAuthor, .bookmark article.booksResult .bookAuthor, .currentlyHeldBooks article.booksResult .bookAuthor {
+    width: 8%; }
+  .searchPage article.booksResult .bookCategory, .userSearchPage article.booksResult .bookCategory, .bookmark article.booksResult .bookCategory, .currentlyHeldBooks article.booksResult .bookCategory {
+    width: 8%; }
+  .searchPage article.booksResult .bookPublisher, .userSearchPage article.booksResult .bookPublisher, .bookmark article.booksResult .bookPublisher, .currentlyHeldBooks article.booksResult .bookPublisher {
+    width: 8%; }
+  .searchPage article.booksResult .bookDescription, .userSearchPage article.booksResult .bookDescription, .bookmark article.booksResult .bookDescription, .currentlyHeldBooks article.booksResult .bookDescription {
+    text-align: justify;
+    width: 25%; }
+  .searchPage article.booksResult .bookAvailability, .userSearchPage article.booksResult .bookAvailability, .bookmark article.booksResult .bookAvailability, .currentlyHeldBooks article.booksResult .bookAvailability {
+    width: 10%; }
+
+.searchPageCategory .rightText, .userSearchPageCategory .rightText, .bookmark .rightText {
+  text-align: right; }
+.searchPageCategory .categories, .userSearchPageCategory .categories, .bookmark .categories {
+  margin-top: 50px; }
+  .searchPageCategory .categories .panel-body, .userSearchPageCategory .categories .panel-body, .bookmark .categories .panel-body {
+    max-height: none; }
+
+.userHeader .logo {
+  heigth: 60px;
+  margin: 0px;
+  width: 16%; }
+  .userHeader .logo img {
+    height: 60px;
+    width: 100%; }
+.userHeader .rightSideHeader {
+  width: 84%; }
+.userHeader .dropDown {
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-left: 30px; }
+  .userHeader .dropDown ul {
+    /*
+    background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+          background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+          background: -webkit-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+          background: -o-linear-gradient(top, #efefef 0%, #bbbbbb 100%);*/
+    background-color: #eee;
+    display: inline-block;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    position: relative; }
+    .userHeader .dropDown ul li {
+      position: relative; }
+      .userHeader .dropDown ul li a {
+        color: #000;
+        display: block;
+        padding: 5px 10px 5px 10px; }
+      .userHeader .dropDown ul li ul {
+        left: 0px;
+        position: absolute;
+        top: 26px; }
+      .userHeader .dropDown ul li img {
+        height: 14px;
+        margin-left: 10px;
+        vertical-align: text-top;
+        width: 14px; }
+    .userHeader .dropDown ul ul {
+      display: none; }
+    .userHeader .dropDown ul li:hover > ul {
+      display: block;
+      margin: 0px;
+      padding: 0px; }
+      .userHeader .dropDown ul li:hover > ul li {
+        float: none;
+        display: block; }
+        .userHeader .dropDown ul li:hover > ul li a {
+          color: #000;
+          min-width: 150px; }
+        .userHeader .dropDown ul li:hover > ul li a:hover {
+          color: #fff; }
+    .userHeader .dropDown ul li:hover {
+      background-color: #4b545f;
+      /*
+       background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+              background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+              background: -webkit-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+              background: -o-linear-gradient(top, #4f5964 0%, #5f6975 40%);*/ }
+      .userHeader .dropDown ul li:hover a {
+        color: #fff; }
+.userHeader .dropDown > ul > li > a {
+  padding-bottom: 5px;
+  text-decoration: none; }
+
+.userHome .advertisement .panel-body {
+  height: 225px; }
+  .userHome .advertisement .panel-body img {
+    height: 100%;
+    width: 100%; }
+
+#bookDetailsDialog .btnsDiv {
+  margin-bottom: 20px;
+  text-align: center; }
+  #bookDetailsDialog .btnsDiv input + input {
+    margin-left: 25px; }
+
+.newSubscription .msg {
+  margin-bottom: 35px; }
+
+.activeSubscription article {
+  width: 80%; }
+  .activeSubscription article section {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; }
+
+.subscriptionHistory input[type="number"], .booksHistory input[type="number"], .bookRating input[type="number"], .modifyRequest input[type="number"], .activeUsersPage input[type="number"], .reports input[type="number"] {
+  width: 75px; }
+.subscriptionHistory .leftSpace, .booksHistory .leftSpace, .bookRating .leftSpace, .modifyRequest .leftSpace, .activeUsersPage .leftSpace, .reports .leftSpace {
+  margin-left: 50px; }
+.subscriptionHistory table, .booksHistory table, .bookRating table, .modifyRequest table, .activeUsersPage table, .reports table {
+  margin: 30px auto;
+  width: 100%; }
+  .subscriptionHistory table thead, .booksHistory table thead, .bookRating table thead, .modifyRequest table thead, .activeUsersPage table thead, .reports table thead {
+    background-color: #333333;
+    color: #fff;
+    font-size: bold; }
+    .subscriptionHistory table thead th, .booksHistory table thead th, .bookRating table thead th, .modifyRequest table thead th, .activeUsersPage table thead th, .reports table thead th {
+      font-weight: bold; }
+  .subscriptionHistory table tbody tr:nth-of-type(odd), .booksHistory table tbody tr:nth-of-type(odd), .bookRating table tbody tr:nth-of-type(odd), .modifyRequest table tbody tr:nth-of-type(odd), .activeUsersPage table tbody tr:nth-of-type(odd), .reports table tbody tr:nth-of-type(odd) {
+    background-color: #EEE; }
+  .subscriptionHistory table tbody tr:nth-of-type(even), .booksHistory table tbody tr:nth-of-type(even), .bookRating table tbody tr:nth-of-type(even), .modifyRequest table tbody tr:nth-of-type(even), .activeUsersPage table tbody tr:nth-of-type(even), .reports table tbody tr:nth-of-type(even) {
+    background-color: #F8F8F8; }
+  .subscriptionHistory table td, .booksHistory table td, .bookRating table td, .modifyRequest table td, .activeUsersPage table td, .reports table td, .subscriptionHistory table th, .booksHistory table th, .bookRating table th, .modifyRequest table th, .activeUsersPage table th, .reports table th {
+    padding: 10px;
+    text-align: center; }
+
+.userSearchPage article.booksResult .bookNo, .bookmark article.booksResult .bookNo {
+  width: 4%; }
+  .userSearchPage article.booksResult .bookNo img, .bookmark article.booksResult .bookNo img {
+    height: 30px;
+    vertical-align: sub;
+    width: 30px; }
+.userSearchPage article.booksResult .bookCover, .bookmark article.booksResult .bookCover {
+  width: 6%; }
+.userSearchPage article.booksResult .bookTitle, .bookmark article.booksResult .bookTitle {
+  width: 12%; }
+.userSearchPage article.booksResult .bookAuthor, .bookmark article.booksResult .bookAuthor {
+  width: 7%; }
+.userSearchPage article.booksResult .bookCategory, .bookmark article.booksResult .bookCategory {
+  width: 7%; }
+.userSearchPage article.booksResult .bookPublisher, .bookmark article.booksResult .bookPublisher {
+  width: 6%; }
+.userSearchPage article.booksResult .bookDescription, .bookmark article.booksResult .bookDescription {
+  width: 22%; }
+.userSearchPage article.booksResult .bookAvailability, .bookmark article.booksResult .bookAvailability {
+  width: 9%; }
+.userSearchPage article.booksResult .bookAction, .bookmark article.booksResult .bookAction {
+  width: 12%; }
+  .userSearchPage article.booksResult .bookAction p, .bookmark article.booksResult .bookAction p {
+    text-align: center; }
+
+.userSearchPageCategory article.booksResult section span, .bookmark article.booksResult section span {
+  word-wrap: break-word; }
+.userSearchPageCategory article.booksResult .bookDescription, .bookmark article.booksResult .bookDescription {
+  width: 20%; }
+.userSearchPageCategory article.booksResult .bookAvailability, .bookmark article.booksResult .bookAvailability {
+  width: 8%; }
+.userSearchPageCategory article.booksResult .bookCategory, .bookmark article.booksResult .bookCategory {
+  width: 6%; }
+.userSearchPageCategory article.booksResult .bookTitle, .bookmark article.booksResult .bookTitle {
+  width: 11%; }
+
+.currentlyHeldBooks article.booksResult {
+  margin-top: 0px; }
+  .currentlyHeldBooks article.booksResult .bookAction {
+    width: 10%; }
+  .currentlyHeldBooks article.booksResult .bookNo img {
+    height: 30px;
+    vertical-align: sub;
+    width: 30px; }
+
+.bookmark .categories {
+  margin-top: 0px; }
+.bookmark article.booksResult {
+  margin-top: 0px; }
+
+.booksHistory input[type="text"] {
+  width: 100px; }
+.booksHistory table tbody img {
+  height: 150px;
+  width: 100px; }
+.booksHistory #subRequestsDialog div {
+  margin-top: 150px;
+  width: 85%; }
+
+.bookRating {
+  background-color: #fff; }
+  .bookRating table tbody img {
+    height: 150px;
+    width: 100px; }
+  .bookRating table tbody .bookDescriptionCell {
+    text-align: justify; }
+  .bookRating .reviewInput {
+    display: inline-block;
+    width: 80%; }
+    .bookRating .reviewInput textarea {
+      height: 50px;
+      width: 100%; }
+  .bookRating .userBookRating {
+    display: inline-block;
+    height: 75px;
+    text-align: right; }
+  .bookRating .reviewDescription {
+    display: inline-block;
+    width: 80%; }
+  .bookRating .reviewRating {
+    display: inline-block;
+    text-align: right; }
+  .bookRating .bookRatingCell {
+    font-size: 25px;
+    width: 15%; }
+    .bookRating .bookRatingCell p:nth-of-type(2) {
+      font-size: 16px; }
+  .bookRating .panel-heading {
+    background-color: #333;
+    color: #fff;
+    padding: 0px inherit;
+    text-align: left; }
+  .bookRating .panel-body {
+    background-color: #eee; }
+  .bookRating #reviewsDisplay {
+    max-height: 500px;
+    overflow: auto; }
+
+.updateAccountDetails p.msg, .addBook p.msg, .modifyBook p.msg, .addOperator p.msg {
+  margin-bottom: 40px; }
+.updateAccountDetails section, .addBook section, .modifyBook section, .addOperator section {
+  text-align: center; }
+.updateAccountDetails input, .addBook input, .modifyBook input, .addOperator input, .updateAccountDetails textarea, .addBook textarea, .modifyBook textarea, .addOperator textarea, .updateAccountDetails label, .addBook label, .modifyBook label, .addOperator label {
+  display: inline-block;
+  margin: 8px 12px; }
+.updateAccountDetails textarea, .addBook textarea, .modifyBook textarea, .addOperator textarea {
+  height: 64px;
+  vertical-align: middle; }
+.updateAccountDetails label, .addBook label, .modifyBook label, .addOperator label {
+  text-align: left;
+  width: 120px; }
+.updateAccountDetails input, .addBook input, .modifyBook input, .addOperator input, .updateAccountDetails textarea, .addBook textarea, .modifyBook textarea, .addOperator textarea {
+  width: 200px; }
+.updateAccountDetails input[type="button"], .addBook input[type="button"], .modifyBook input[type="button"], .addOperator input[type="button"], .updateAccountDetails input[type="submit"], .addBook input[type="submit"], .modifyBook input[type="submit"], .addOperator input[type="submit"] {
+  display: inline;
+  margin-top: 28px;
+  width: 100px; }
+.updateAccountDetails .changePassword label, .addBook .changePassword label, .modifyBook .changePassword label, .addOperator .changePassword label {
+  width: 140px; }
+.updateAccountDetails .changePassword input[type="reset"], .addBook .changePassword input[type="reset"], .modifyBook .changePassword input[type="reset"], .addOperator .changePassword input[type="reset"] {
+  display: inline;
+  margin-top: 28px;
+  width: 100px; }
+
+.modifyRequest table {
+  margin-top: 0px;
+  word-wrap: break-word; }
+  .modifyRequest table .tdEdit {
+    min-width: 72px; }
+    .modifyRequest table .tdEdit img {
+      height: 24px;
+      padding: 4px 2px;
+      width: 24px; }
+    .modifyRequest table .tdEdit a:hover img {
+      background-color: #CCC; }
+
+.activeUsersPage table {
+  margin-top: 0px; }
+
+.pagination .pull-right {
+  float: right !important; }
+.pagination .btn-default:hover, .pagination .btn-default:focus, .pagination .btn-default:active, .pagination .btn-default.active, .pagination .open .dropdown-toggle.btn-default {
+  background-color: #ebebeb;
+  border-color: #adadad;
+  color: #333; }
+.pagination .btn:active, .pagination .btn.active {
+  background-image: none;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset; }
+.pagination .btn-group > .btn:first-child {
+  margin-left: 0; }
+.pagination .btn {
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 6px 12px; }
+.pagination .pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px; }
+.pagination .pagination > li {
+  display: inline; }
+.pagination .pagination > li > a,
+.pagination .pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #428bca;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd; }
+.pagination .pagination > li:first-child > a,
+.pagination .pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px; }
+.pagination .pagination > li:last-child > a,
+.pagination .pagination > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px; }
+.pagination .pagination > li > a:hover,
+.pagination .pagination > li > span:hover,
+.pagination .pagination > li > a:focus,
+.pagination .pagination > li > span:focus {
+  color: #2a6496;
+  background-color: #eee;
+  border-color: #ddd; }
+.pagination .pagination > .active > a,
+.pagination .pagination > .active > span,
+.pagination .pagination > .active > a:hover,
+.pagination .pagination > .active > span:hover,
+.pagination .pagination > .active > a:focus,
+.pagination .pagination > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #428bca;
+  border-color: #428bca; }
+.pagination .pagination > .disabled > span,
+.pagination .pagination > .disabled > span:hover,
+.pagination .pagination > .disabled > span:focus,
+.pagination .pagination > .disabled > a,
+.pagination .pagination > .disabled > a:hover,
+.pagination .pagination > .disabled > a:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd; }
+.pagination .pagination-lg > li > a,
+.pagination .pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px; }
+.pagination .pagination-lg > li:first-child > a,
+.pagination .pagination-lg > li:first-child > span {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px; }
+.pagination .pagination-lg > li:last-child > a,
+.pagination .pagination-lg > li:last-child > span {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px; }
+.pagination .pagination-sm > li > a,
+.pagination .pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px; }
+.pagination .pagination-sm > li:first-child > a,
+.pagination .pagination-sm > li:first-child > span {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px; }
+.pagination .pagination-sm > li:last-child > a,
+.pagination .pagination-sm > li:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px; }
+
+.addBook input[type="reset"], .modifyBook input[type="reset"], .addOperator input[type="reset"] {
+  display: inline;
+  margin-top: 28px;
+  width: 100px; }
+.addBook select, .modifyBook select, .addOperator select {
+  display: inline-block;
+  width: 200px; }
+.addBook label[for="bookCategory"], .modifyBook label[for="bookCategory"], .addOperator label[for="bookCategory"] {
+  position: relative;
+  right: 12px; }
+.addBook form, .modifyBook form, .addOperator form {
+  margin-bottom: 30px; }
+
+.modifyBook #bookNoInput, .addOperator #bookNoInput {
+  margin-left: 0px;
+  width: 75px; }
+.modifyBook #bookNoLabel, .addOperator #bookNoLabel {
+  display: inline; }
+.modifyBook .mainForm, .addOperator .mainForm {
+  position: relative; }
+.modifyBook .bookCoverImg, .addOperator .bookCoverImg {
+  left: 0px;
+  position: absolute;
+  top: 0px; }
+  .modifyBook .bookCoverImg img, .addOperator .bookCoverImg img {
+    height: 200px;
+    width: 150px; }
+.modifyBook .dialogBookCoverImg, .addOperator .dialogBookCoverImg {
+  top: 78px; }
+.modifyBook input[value="Delete"], .addOperator input[value="Delete"] {
+  color: #ff0000; }
+.modifyBook input[value="Update"], .addOperator input[value="Update"] {
+  color: #0000ff; }
+
+.addOperator label {
+  width: 130px; }
+
+.reports #fromDate, .reports #toDate {
+  width: 100px; }
+.reports .leftSpace {
+  margin: 0px 0px 0px 30px; }
+.reports label {
+  padding: 0px 15px 0px 0px; }
+.reports .paddedForm {
+  padding: 10px 0px; }
+.reports section {
+  text-align: center; }

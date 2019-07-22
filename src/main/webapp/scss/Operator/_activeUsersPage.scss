@@ -1,0 +1,7 @@
+.activeUsersPage{
+	@extend .subscriptionHistory;
+	
+	table{
+		margin-top:0px;
+	}
+}

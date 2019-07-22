@@ -1,0 +1,46 @@
+.updateAccountDetails{
+  p.msg{
+    margin-bottom:40px;
+  }
+  
+  section{
+    text-align:center;
+  }
+  
+  input,textarea,label{
+    display:inline-block;
+    margin:8px 12px;
+  }
+  
+  textarea{
+    height:64px;
+    vertical-align:middle;
+  }
+  
+  label{
+    text-align:left;
+    width:120px;
+  }
+  
+  input,textarea{
+    width:200px;
+  }
+  
+  input[type="button"],input[type="submit"]{
+    display:inline;
+    margin-top:28px;
+    width:100px;
+  }
+  
+  .changePassword{
+    label{
+      width:140px;
+    }
+    
+    input[type="reset"]{
+      display:inline;
+      margin-top:28px;
+      width:100px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<ng-include src="'partials/Operator/operatorHeader.html'"></ng-include>
+<div class="container updateAccountDetails centerElements">
+	<form ng-submit="updateDetails()">
+		<article>
+			<p ng-hide="message.length==0" class="msg"><span ng-class="{error:isErrorMessage,success:!isErrorMessage}">{{message}}</span></p>
+			<section>
+				<p class="formHeading">Update Account Details</p>
+			</section>
+			<section>
+				<label for="userName">Name<span class="required">*</span></label><input type="text" ng-model="user.userName" required />
+			</section>
+			<section>
+				<label for="userEmail">Email<span class="required">*</span></label><input type="email" ng-model="user.userEmail" ng-blur="checkUserExists()" placeholder="someone@domain.com" required />
+			</section>
+			<section>
+				<label for="userAddress">Address</label><textarea ng-model="user.userAddress"></textarea>
+			</section>
+			<section>
+				<label for="userContact">Contact</label><input type="tel" ng-model="user.userContact" title="Enter your 10 digit contact no." placeholder="10 digit contact no" pattern="\d{10}" onkeypress="return restrictContact(event)" />
+			</section>
+			<section>
+				<input type="submit" value="Update" ng-disabled="message=='User Already Exists'" />
+				<input type="button" value="Reset" ng-click="resetFields()"/>
+			</section>
+		</article>
+	</form>
+</div>
+<script>
+	trimWhiteSpace();
+</script>

@@ -1,0 +1,15 @@
+<div class="activeUsersPage" ng-controller="ActiveUsersController">
+	<section ng-hide="activeUsersList.length==0">
+		<table ng-table="activeUsersTable" show-filter="true">
+			<tr ng-repeat="activeUser in $data">
+				<td data-title="'User Name'" sortable="'user.userName'" filter="{ 'userName' : 'text' }">{{activeUser.user.userName}}</td>
+				<td data-title="'User Email'" sortable="'user.userEmail'" filter="{ 'userEmail': 'text' }">{{activeUser.user.userEmail}}</td>
+				<td data-title="'Contact No'" sortable="'user.userContact'" >{{activeUser.user.userContact}}</td>
+				<td data-title="'Plan Id'" sortable="'planId'" filter="{ 'planId': 'select' }" filter-data="planIdComboBox()">{{activeUser.planId}}</td>
+				<td data-title="'Plan Start Date'" sortable="'planStartDate'">{{activeUser.planStartDate | date:'dd/MMM/yyyy'}}</td>
+				<td data-title="'Plan End Date'" sortable="'planEndDate'">{{activeUser.planEndDate | date:'dd/MMM/yyyy'}}</td>
+			</tr>
+		</table>
+	</section> 
+	<h3 ng-show="activeUsersList.length==0">No active users found</h3>
+</div>

@@ -1,0 +1,46 @@
+<div class="addBook" ng-controller="AddBookController">
+	<form ng-submit="addBookDetails()">
+		<article>
+			<p ng-hide="message.length==0" class="msg"><span ng-class="{error:isErrorMessage,success:!isErrorMessage}">{{message}}</span></p>
+			<section>
+				<label for="bookTitle">Book Title<span class="required">*</span></label><input type="text" ng-model="book.bookTitle" required />
+			</section>
+			<section>
+				<label for="bookAuthor">Author<span class="required">*</span></label><input type="text" ng-model="book.bookAuthor" required />
+			</section>
+			<section>
+				<label for="bookCategory">Category<span class="required">*</span></label>
+				<select ng-model="book.bookCategory1">
+					<option ng-repeat="bookCategory in categoryList" value="{{bookCategory}}">{{bookCategory}}</option>
+					<option value="Other">Other</option>
+				</select>
+			</section>
+			<section ng-show="book.bookCategory1=='Other'">
+				<label for="newBookCategory">	
+				</label><input type="text" ng-model="book.newBookCategory" placeholder="Enter New Category" />
+			</section>
+			<section>
+				<label for="bookPublisher">Publisher</label><input type="text" ng-model="book.bookPublisher" />
+			</section>
+			<section>
+				<label for="bookCover">Cover<span class="required">*</span></label><input type="file" id="imgFile" accept="image/*" required />
+			</section>
+			<section>
+				<label for="bookPrice">Price</label><input type="text" ng-model="book.bookPrice" />
+			</section>
+			<section>
+				<label for="bookQty">Quantity<span class="required">*</span></label><input type="number" min="1" ng-model="book.bookQty" onkeypress="return restrictContact(event)" required />
+			</section>
+			<section>
+				<label for="bookDescription">Description</label><textarea ng-model="book.bookDescription"></textarea>
+			</section>
+			<section>
+				<input type="submit" value="Add" />
+				<input type="reset" value="Reset" />
+			</section>
+		</article>
+	</form>
+</div>
+<script>
+	trimWhiteSpace();
+</script>

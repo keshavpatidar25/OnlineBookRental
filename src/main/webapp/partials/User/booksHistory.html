@@ -1,0 +1,76 @@
+<div class="booksHistory" ng-controller="BooksHistoryController">
+	<section>
+		<form ng-submit="getBooksHistory()">
+			<label>From </label><input type="text" id="fromDate" class="datePicker" ng-model="fromDate" required/>
+			<label> To </label><input type="text" id="toDate" class="datePicker" ng-model="toDate" required/>
+			<label class="leftSpace">Sort By </label>
+			<select ng-model="sortBy" ng-init="sortBy='true'">
+				<option value="false">Ascending</option>
+				<option value="true">Descending</option>
+			</select>
+			<input type="submit" value="Submit"/>
+		</form>
+	</section>
+	<section>
+		<table ng-hide="booksHistoryList.length==0 || isFirstHistory">
+			<thead>
+				<th>Request Date</th>
+				<th>Request No</th>
+				<th>Book No</th>
+				<th>Book Cover</th>
+				<th>Book Title</th>
+				<th>Book Author</th>
+				<th>Delivery Status</th>
+				<th>Return Status</th>
+				
+			</thead>
+			<tbody>
+				<tr ng-repeat="book in booksHistoryList | orderBy:'requestDate':sortBy">
+					<td>{{book.requestDate | date:'dd/MMM/yyyy'}}</td>
+					<td><a href="javascript:void(0)" ng-click="displaySubRequests(book.request.requestNo)" >{{book.request.requestNo}}</a></td>
+					<td>{{book.book.bookNo}}</td>
+					<td><img ng-src="data:image/png;base64,{{book.book.bookCover}}"></img></td>
+					<td>{{book.book.bookTitle}}</td>
+					<td>{{book.book.bookAuthor}}</td>
+					<td>{{book.request.deliveryStatus}}</td>
+					<td>{{book.request.returnStatus}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<h3 ng-show="booksHistoryList.length==0">No books found</h3>
+	</section> 
+	
+	<div ng-show="showSubRequests" id="subRequestsDialog">
+		<div>
+			<a href="javascript:void(0)" ng-click="hideSubRequests()"></a>
+			<h3>Request No : {{requestNo}}</h3>
+			<table>
+				<thead>
+					<th>Sub Request No</th>
+					<th>Request Date</th>
+					<th>Request Type</th>
+					<th>Request Sub Type</th>
+					<th>Address</th>
+					<th>Contact</th>
+					<th>Request By</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="request in subRequestsList | orderBy:'requestDate'">
+						<td>{{request.subRequestNo}}</td>
+						<td>{{request.subRequestDate | date : 'dd/MMM/yyyy hh:mm:ss'}}</td>
+						<td>{{request.subRequestType}}</td>
+						<td>{{request.subRequestSubType}}</td>
+						<td>{{request.subRequestAddress}}</td>
+						<td>{{request.subRequestContact}}</td>
+						<td>{{request.subRequestBy}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<script>
+	activateDatePicker("fromDate");	
+	activateDatePicker("toDate");
+</script>

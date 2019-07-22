@@ -1,0 +1,19 @@
+.currentlyHeldBooks{
+  @extend .searchPage;
+    
+  article.booksResult{
+      margin-top:0px;
+      
+      .bookAction{
+        width:10%;
+      }
+      
+      .bookNo{
+        img{
+          height: 30px;
+          vertical-align: sub;
+          width: 30px;
+        }
+      }
+  }
+}

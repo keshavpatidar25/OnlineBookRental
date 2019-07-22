@@ -1,0 +1,62 @@
+<link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css" />
+<div class="bookRating">
+	<table>
+		<thead>
+			<th>Book No</th>
+			<th>Book Cover</th>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Category</th>
+			<th>Publisher</th>
+			<th>Description</th>
+			<th class="bookRatingCell">Ratings</th>
+		</thead>
+		<tbody>
+			<td>{{ngDialogData.bookDetails.bookNo}}</td>
+			<td><img ng-src="data:image/png;base64,{{ngDialogData.bookDetails.bookCover}}"></td>
+			<td>{{ngDialogData.bookDetails.bookTitle}}</td>
+			<td>{{ngDialogData.bookDetails.bookAuthor}}</td>
+			<td>{{ngDialogData.bookDetails.bookCategory}}</td>
+			<td>{{ngDialogData.bookDetails.bookPublisher}}</td>
+			<td class="bookDescriptionCell">{{ngDialogData.bookDetails.bookDescription}}</td>
+			<td class="bookRatingCell">
+				<p> <rating ng-model="bookRating" max="5" readonly="true"></rating></p>
+				<p>{{ratingCount}} Users</p>
+			</td>
+		</tbody>
+	</table>
+	
+	<article>
+		<section class="panel">
+			<div class="panel-heading">
+				<h4>
+					Write Review
+				</h4>
+			</div>
+			<div class="panel-body">
+				<form name="reviewForm" ng-submit="submitReview()">
+					<div class="reviewInput"><textarea ng-model="userBookReview" required></textarea></div>
+					<div class="userBookRating bookRatingCell"><rating ng-model="userBookRating" max="5" ng-click="submitRating()"></rating></div>
+					<div class="clearFloat"><input type="submit" value="Submit" ng-disabled="reviewForm.$invalid"></div>
+				</form>
+			</div>
+		</section>
+		<h3>Reviews : </h3>
+		<div id="reviewsDisplay">
+			<section class="panel" ng-repeat="review in bookReviewsList | orderBy:'review.reviewDate':true">
+				<div class="panel-heading">
+					<h4>
+						<span>{{review.review.userEmail}}</span><span class="rightAlign">{{review.review.reviewDate| date : 'dd/MMM/yyyy hh:mm:ss'}}</span>
+					</h4>
+				</div>
+				<div class="panel-body clearFloat">
+					<div class="reviewDescription">{{review.review.bookReview}}</div>
+					<div class="reviewRating bookRatingCell"><rating ng-model="review.rating.bookRating" max="5" readonly="true"></rating></div>
+				</div>
+			</section>
+		</div>
+	</article>
+</div>
+<script>
+	trimWhiteSpace();
+</script>

@@ -1,0 +1,24 @@
+.modifyRequest{
+  @extend .subscriptionHistory;
+ 
+  table{
+    margin-top:0px;
+    word-wrap:break-word;
+    
+    .tdEdit{
+      min-width:72px;
+      img{
+        height:24px;
+        padding:4px 2px;
+        width:24px;
+      }
+      
+      a:hover{
+        img{
+          background-color:#CCC;
+        }
+      }
+    }
+  }
+  
+}

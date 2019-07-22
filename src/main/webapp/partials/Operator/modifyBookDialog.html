@@ -1,0 +1,54 @@
+<div class="modifyBook">
+	<form ng-submit="updateBook()">
+		<p ng-hide="message.length==0" class="msg"><span ng-class="{error:isErrorMessage,success:!isErrorMessage}">{{message}}</span></p>
+		<article class="mainForm">
+			<section class="dialogBookCoverImg bookCoverImg" ng-show="bookToModify.bookCover"><img ng-src="data:image/png;base64,{{bookToModify.bookCover}}" /></section>
+			<section>
+				<p class="formHeading">Update/Delete Book</p>
+			</section>
+			<section>
+				<label for="bookNo">Book No<span class="required">*</span></label><input type="text" ng-model="bookToModify.bookNo" disabled required />
+			</section>
+			<section>
+				<label for="bookTitle">Book Title<span class="required">*</span></label><input type="text" ng-model="bookToModify.bookTitle" required />
+			</section>
+			<section>
+				<label for="bookAuthor">Author<span class="required">*</span></label><input type="text" ng-model="bookToModify.bookAuthor" required />
+			</section>
+			<section>
+				<label for="bookCategory">Category<span class="required">*</span></label>
+				<select ng-model="bookToModify.bookCategory1">
+					<option ng-repeat="bookCategory in categoryList" value="{{bookCategory}}">{{bookCategory}}</option>
+					<option value="Other">Other</option>
+				</select>
+			</section>
+			<section ng-show="bookToModify.bookCategory1=='Other'">
+				<label for="newBookCategory">	
+				</label><input type="text" ng-model="bookToModify.newBookCategory" placeholder="Enter New Category" />
+			</section>
+			<section>
+				<label for="bookPublisher">Publisher</label><input type="text" ng-model="bookToModify.bookPublisher" />
+			</section>
+			<section>
+				<label for="bookCover">Cover</label><input type="file" id="imgFile" accept="image/*" />
+			</section>
+			<section>
+				<label for="bookPrice">Price</label><input type="text" ng-model="bookToModify.bookPrice" />
+			</section>
+			<section>
+				<label for="bookQty">Quantity<span class="required">*</span></label><input type="number" min="1" ng-model="bookToModify.bookQty" onkeypress="return restrictContact(event)" required />
+			</section>
+			<section>
+				<label for="bookDescription">Description</label><textarea ng-model="bookToModify.bookDescription"></textarea>
+			</section>
+			<section>
+				<input type="submit" value="Update" />
+				<input type="button" value="Delete" ng-click="deleteBook()" />
+				<input type="button" value="Reset" ng-click="resetFields()" />
+			</section>
+		</article>
+	</form>
+</div>
+<script>
+	trimWhiteSpace();
+</script>

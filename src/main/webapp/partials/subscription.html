@@ -1,0 +1,19 @@
+<div ng-controller="NavigationController">
+	<ng-include src="'partials/guestHeader.html'" onload="setActiveHeader('nav3')"></ng-include>
+</div>
+<div class="subscription">
+	<div class="container">
+		<article class="center">
+			<section class="panel centerElements" ng-repeat="plan in plans | orderBy:'planPrice'">
+				<div class="panel-heading">
+					<h2>{{plan.planId}}</h2>
+				</div>
+				<div class="panel-body">
+					<p>₹ <span class="imp">{{plan.planPrice}}</span> / <span class="imp">{{plan.planValidity}}</span> Month</p>
+					<p>No. of Books that can be issued at a time: <span class="imp">{{plan.noOfBooksAllowed}}</span></p>
+					<p><a ng-href="#/login"><button>Sign Up</button></a></p>
+				</div>
+			</section>
+		</article>
+	</div>
+</div>

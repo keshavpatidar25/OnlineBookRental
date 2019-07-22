@@ -1,0 +1,22 @@
+<div ng-controller="NavigationController">
+	<ng-include src="'partials/User/userHeader.html'" onload="setActiveHeader('nav3')"></ng-include>
+</div>
+<div class="container">
+	<article class="leftContainer">			
+		<section class="panel categories">
+			<div class="panel-heading">
+				<h3>
+					Subscription Plans
+				</h3>
+			</div>
+			<div class="panel-body">
+				<ul>
+					<li ng-class="{active:selectedIndex==item.index}" ng-repeat="item in leftContainerElements"><a href="javascript:void(0)" ng-click="changeIndex(item.index)">{{item.element}}</a></li>
+				</ul>
+			</div>
+		</section>
+	</article>
+	<article class="mainContainer">
+		<ng-include src="subscriptionTemplate"></ng-include>
+	</article>
+</div>

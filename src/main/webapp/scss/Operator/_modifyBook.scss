@@ -1,0 +1,38 @@
+.modifyBook{
+	@extend .addBook;
+	
+	#bookNoInput{
+		margin-left:0px;
+		width: 75px;
+	}
+	
+	#bookNoLabel{
+		display:inline;
+	}
+	
+	.mainForm{
+		position:relative;
+	}
+	
+	.bookCoverImg{
+		left:0px;
+		position:absolute;
+		top:0px;
+		img{
+			height:200px;
+			width:150px;
+		}
+	}
+	
+	.dialogBookCoverImg{
+	  top:78px;
+	}
+	
+	input[value="Delete"]{
+		color:#ff0000;
+	}
+	
+	input[value="Update"]{
+		color:#0000ff;
+	}
+}

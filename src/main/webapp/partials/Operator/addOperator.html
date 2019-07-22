@@ -1,0 +1,38 @@
+<div ng-controller="NavigationController">
+	<ng-include src="'partials/Operator/operatorHeader.html'" onload="setActiveHeader('nav4')"></ng-include>
+</div>
+<div class="container addOperator centerElements">
+	<form ng-submit="register()">
+		<article>
+			<p ng-hide="message.length==0" class="msg"><span ng-class="{error:isErrorMessage,success:!isErrorMessage}">{{message}}</span></p>
+			<section>
+				<p class="formHeading">Add New Operator</p>
+			</section>
+			<section>
+				<label for="userName">Name<span class="required">*</span></label><input type="text" ng-model="user.userName" required />
+			</section>
+			<section>
+				<label for="userEmail">Email<span class="required">*</span></label><input type="email" ng-model="user.userEmail" ng-blur="checkEmail()" placeholder="someone@domain.com" required />
+			</section>
+			<section>
+				<label for="userPassword">Password<span class="required">*</span></label><input type="password" ng-model="user.userPass" required />
+			</section>
+			<section>
+				<label for="userConfirmPassword">Confirm Password<span class="required">*</span></label><input type="password" ng-model="user.confirmPass" ng-blur="checkPassword()" required />
+			</section>
+			<section>
+				<label for="userAddress">Address</label><textarea ng-model="user.userAddress"></textarea>
+			</section>
+			<section>
+				<label for="userContact">Contact</label><input type="tel" ng-model="user.userContact" title="Enter your 10 digit contact no." placeholder="10 digit contact no" pattern="\d{10}" onkeypress="return restrictContact(event)" />
+			</section>
+			<section>
+				<input type="submit" value="Register" />
+				<input type="reset" value="Reset" />
+			</section>
+		</article>
+	</form>
+</div>
+<script>
+	trimWhiteSpace();
+</script>

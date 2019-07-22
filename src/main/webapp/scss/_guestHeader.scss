@@ -1,0 +1,9 @@
+.guestHeader{
+  .logo{
+    @extend .leftAlign;
+  }
+  
+  .searchBar{
+    @extend .rightAlign;
+  }
+}

@@ -1,0 +1,31 @@
+<div ng-controller="SubscriptionHistoryController" class="subscriptionHistory">
+	<section  ng-hide="planList.length==0">
+		<label>Last </label><input type="number" ng-model="historyLimit" ng-init="historyLimit=10" min="1" required/><label> Subscription Plans</label>
+		<label class="leftSpace">Sort By </label>
+		<select ng-model="sortBy" ng-init="sortBy='true'">
+			<option value="false">Ascending</option>
+			<option value="true">Descending</option>
+		</select>
+	</section>
+	<section  ng-hide="planList.length==0">
+		<table>
+			<thead>
+				<th>Plan</th>
+				<th>Start Date</th>
+				<th>End Date</th>
+				<th>No. of books that can be issued</th>
+				<th>Amount(₹)</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="plan in planList | limitTo:historyLimit | orderBy:'planStartDate':sortBy">
+					<td>{{plan.plan.planId}}</td>
+					<td>{{plan.planStartDate | date:'dd/MMM/yyyy'}}</td>
+					<td>{{plan.planEndDate | date:'dd/MMM/yyyy'}}</td>
+					<td>{{plan.plan.noOfBooksAllowed}}</td>
+					<td>{{plan.plan.planPrice}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<h3 ng-show="planList.length==0">No subscription plans history found</h3>
+</div>

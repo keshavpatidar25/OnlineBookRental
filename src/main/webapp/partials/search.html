@@ -1,0 +1,42 @@
+<ng-include src="'partials/guestHeader.html'"></ng-include>
+<div class="searchPage">
+	<div class="container">
+		<div class="rightAlign">
+				<select ng-change="changeSort()" ng-model="sortBy" ng-init="sortBy='Most Popular'" ng-change="changeSort()">
+					<option value="Most Popular">Most Popular</option>
+					<option value="New Arrivals">New Arrivals</option>
+					<option value="Category Wise">Category Wise</option>
+				</select>
+		</div>
+		<div>
+			<h3 ng-hide="booksFound">No Books Found</h3>
+			<article class="booksResult" ng-hide="booksList.length==0">
+				<section class="booksHead">
+						<span class="bookNo">Book No</span>
+						<span class="bookCover">Book Cover</span>
+						<span class="bookTitle">Title</span>
+						<span class="bookAuthor">Author</span>
+						<span class="bookCategory">Category</span>
+						<span class="bookPublisher">Publisher</span>
+						<span class="bookDescription">Description</span>
+						<span class="bookAvailability">Availability</span>
+				</section>
+
+				<section class="booksBody"> 
+					<section class="booksBodyCell" ng-repeat="book in booksList">
+						<span class="bookNo">{{book.bookDetails.bookNo}}</span>
+						<span class="bookCover"><img ng-src="data:image/png;base64,{{book.bookDetails.bookCover}}"></img></span>
+						<span class="bookTitle">{{book.bookDetails.bookTitle}}</span>
+						<span class="bookAuthor">{{book.bookDetails.bookAuthor}}</span>
+						<span class="bookCategory">{{book.bookDetails.bookCategory}}</span>
+						<span class="bookPublisher">{{book.bookDetails.bookPublisher}}</span>
+						<span class="bookDescription">{{book.bookDetails.bookDescription}}</span>
+						<span class="bookAvailability">{{book.bookDetails.bookAvailability}}</span>
+					</section>
+				</section>
+
+			</article>
+
+		</div>
+	</div>
+</div>

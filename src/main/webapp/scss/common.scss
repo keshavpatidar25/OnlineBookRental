@@ -1,0 +1,462 @@
+body {
+  font-family: "Times New Roman", Georgia, Serif;
+	margin:15px auto 0px auto;
+	min-width:980px;
+	padding:0px 0px 48px 0px;
+}
+
+.rightAlign{
+  float:right;
+}
+
+.leftAlign{
+  float:left;  
+}
+
+.clearFloat{
+  clear:both;
+}
+
+::-webkit-input-placeholder {font-style: italic;}
+::-moz-placeholder {font-style: italic;} /* firefox 19+ */
+:-ms-input-placeholder {font-style: italic;} /* ie */
+input:-moz-placeholder {font-style: italic;}
+
+a{
+  outline:none 0px;
+  text-decoration:none;
+}
+
+img{
+	border:0px;
+}
+
+header, .container, .nav, footer > div {
+	margin-left: auto;
+	margin-right: auto;
+	width: 85%;
+}
+
+.container {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.container::after{
+  clear:both;
+  content:"";
+  display:block;
+}
+
+.center, .centerElements * {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+nav {
+	background-color: #eee;
+	display: block;
+	margin-bottom: 0.75%;
+}
+
+.nav {
+	list-style: none;
+}
+
+.nav > li > a {
+	color: #000;
+	display:block;
+	padding:10px 30px;
+	text-decoration: none;
+}
+
+.nav > li > a:first-of-type{
+  padding-left:15px;
+}
+
+
+.nav > li > a:hover, .nav > li > a:focus, .nav > li.active > a:hover, .nav > li.active > a:focus {
+	background-color: #4b545f;    /* background-color: #bbb; */
+	color: #fff;
+}
+
+.nav > li {
+	@extend .leftAlign;
+}
+
+.nav > li.active > a{
+	background-color: #eee;
+	color: #000;
+	font-weight:bold;
+}
+
+.row {
+	@extend .clearFloat;
+}
+
+.row:before, .row:after {
+	content: " ";
+	display: block;
+}
+
+.row:after {
+	@extend .clearFloat;
+}
+
+footer {
+	background-color: #eee;
+	bottom:0px; 
+	display: block;
+	height:40px;
+	padding-bottom: 8px;
+	left:0px; 
+	position:fixed;
+	right:0px; 
+	text-align: center;
+}
+
+footer img {
+	float: right;
+	height: 40px;
+	width: 40px;
+}
+
+footer span {
+	display:inline-block;
+	font-size: 11px;
+	padding-top:20px;
+}
+
+footer img:after {
+	@extend .clearFloat;
+}
+
+form.search > select, form.search > input {
+	font-family: "Times New Roman", Georgia, Serif;
+	font-size: large;
+}
+
+form.search > select {
+	background-color: #F6F6F6;
+}
+
+.msg {
+	font-size:medium;
+	font-weight:bold;
+	text-align:center;
+}
+
+
+.msg span.error, .msg span.success, .msg span.info {
+	border-radius:15px;
+	border-style: double;
+	border-width: 5px;
+	padding: 15px;
+		
+}
+
+.msg span.error {
+	background-color:rgba(255,0,0,0.02);
+	border-color: red;
+	color:red;
+}
+
+.msg span.success {
+	background-color:rgba(0,255,0,0.02);
+	border-color: green;
+	color:green;
+}
+
+.msg span.info {
+  background-color:rgba(0,0,255,0.02);
+  border-color: #0000AA;
+  color:#0000AA;
+}
+
+span.required {
+	color:#FF0000;
+}
+
+.formHeading{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.panel {
+	background-color: #fff;
+	border: 1px solid;
+	border-color: #ddd;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+.panel-body {
+	padding: 10px;
+	text-align: left;
+}
+.panel-heading {
+	background-color: #eee;
+	color: #333;
+	padding: 0px 15px;
+	text-align: center;  
+}
+
+.panel-heading h3 {
+  margin: 0px;
+	padding: 10px 0px;
+}
+
+.categories li a{
+  display:block;
+}
+
+.categories a:visited, .categories a:link{
+    color:#000;
+    text-decoration:none;
+}
+
+.categories li:hover{
+  background-color:#E1E1E1;
+}
+
+.categories li{
+  list-style:none;
+  padding-top:5px;
+}
+
+.categories li.active{
+  font-weight:bold;
+  text-decoration:underline;
+}
+
+.categories .panel-body{
+  font-size:20px;
+  max-height:290px;
+  overflow:auto;
+  padding-top:0%;
+}
+
+.categories ul{
+  padding-left:0%;
+}
+
+article.leftContainer{
+  @extend .leftAlign;
+  width:16%;
+}
+
+article.mainContainer{
+    @extend .leftAlign;
+    margin-left:2%;
+    width:82%;
+}
+
+//CSS For UI Tabs and Dialog Start
+
+.ui-widget-header{
+  background-color:#F6F6F6;
+  border: 1px solid #c0c0c0;
+}
+
+.ui-widget {
+    font-family: "Times New Roman";
+}
+
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+    color: #888;
+}
+
+
+.ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    color: #000;
+}
+
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+  color: #000;
+}
+  
+.ui-tabs-panel{
+  background-color:#FFF;  
+}
+
+.ui-widget-header {
+    color: #000;
+}
+
+.ui-widget-header .ui-icon {
+    background-image: url("../images/ui-icons.png");
+}
+  
+.ng-pristine{
+  box-shadow:none;
+}
+   //CSS For Tabs and Dialog End
+.thumbnail img{    
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: block;
+  padding: 4px;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+  
+.thumbnail .caption{
+  text-align:center;
+}
+
+#userDetailsDialog, #requestCancelDialog{
+  background-color:rgba(0,0,0,0.4);
+  display:none;
+  height:100%;
+  left: 0px;
+  position: fixed;
+  text-align:center;
+  top: 0px;
+  width:100%;
+  z-index: 1000;
+ 
+  div {
+   	background-color:#f8f8ff;
+    box-shadow:10px 10px 5px #808080;
+    margin: 200px auto 0px auto;
+    padding:15px;
+    text-align:center;
+    width:300px;
+    
+    textarea,input{
+    	vertical-align:middle;
+    }
+    
+   	a{
+   		@extend .rightAlign;
+   		background-image:url("../images/closeImg.png");
+   		background-size: 25px 25px;
+    	background-repeat: no-repeat;
+   		height:25px;
+   		width:25px;
+   	}
+   	
+   	a:hover{
+   		background-image:url("../images/closeImg1.png");
+   	}
+   	
+   	a::after{
+   		clear:both;
+   	}
+   	
+   	p{
+   		label{
+   			display:inline-block;
+   			text-align:left;
+   			width:100px;
+   		}
+   		
+   		textarea,input{
+   			display:inline-block;
+   			width:150px;
+   		}
+   	}
+  }
+}
+
+.ngdialog.ngdialog-theme-plain .ngdialog-content {
+	width:85%;
+}
+
+.ngdialog.ngdialog-theme-plain {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content{
+  border-radius:0px;
+  width:700px;
+}
+
+input,textarea{
+    display:inline-block;
+    width:200px;
+}
+textarea{
+  height:75px;
+}
+.rightTextAlign{
+    text-align:right !important;
+}
+
+input[type="submit"],input[type="reset"],input[type="button"]{
+    margin-left:12px;
+    margin-right:12px;
+    width:110px !important;  
+}
+  
+#forgotPassword{
+	margin:30px;
+	position:relative;
+	text-align:center;
+	
+	img{
+	  margin:0px auto;
+		height:75px;
+		left:50%;
+		position:absolute;
+		top:-25px;
+		width:75px;
+	}
+}
+
+#httpLoadingProcessDiv,#ajaxLoadingProcessDiv{
+    background-color:rgba(0,0,0,0.4);
+    height:100%;
+    left: 0px;
+    position: fixed;
+    text-align: center;
+    top: 0px;
+    width:100%;
+    z-index: 20000;
+    img{
+      height:75px;
+      margin-top:250px;
+      width:75px;
+    }
+}
+
+ 
+#ajaxLoadingProcessDiv{
+  display:none;
+}
+
+.contact{
+  #loadingProcessDiv{
+    display:none;
+  }
+}
+
+textarea {
+	resize:none;
+}
+
+@import '_home.scss';
+@import '_login.scss';
+@import '_about.scss';
+@import '_contact.scss';
+@import '_subscription.scss';
+@import '_search.scss';
+@import 'User/_userHeader.scss';
+@import 'User/_home.scss';
+@import 'User/_subscription.scss';
+@import 'User/_search.scss';
+@import 'User/_currentlyHeldBooks.scss';
+@import 'User/_bookmark.scss';
+@import 'User/_booksHistory.scss';
+@import 'User/_bookRating.scss';
+@import 'User/_updateAccountDetails.scss';
+@import 'Operator/_modifyRequest.scss';
+@import 'Operator/_activeUsersPage.scss';
+@import 'Operator/bootstrap library for pagination.scss';
+@import 'Operator/_addBook.scss';
+@import 'Operator/_modifyBook.scss';
+@import 'Operator/_addOperator.scss';
+@import 'Operator/_reports.scss';

@@ -1,0 +1,7 @@
+<ng-include ng-show="successfulLogout" src="'partials/guestHeader.html'"></ng-include>
+<ng-include ng-show="userRole=='USER'" src="'partials/User/userHeader.html'"></ng-include>
+<ng-include ng-show="userRole=='OPERATOR'" src="'partials/Operator/operatorHeader.html'"></ng-include>
+<div class="container">
+	<h3 ng-show="successfulLogout">You have successfully logged out. <a href="#/login">Click Here</a> to Login.</h3>
+	<h3 ng-hide="successfulLogout">Logout was not successful. Please try again.</h3>
+</div>

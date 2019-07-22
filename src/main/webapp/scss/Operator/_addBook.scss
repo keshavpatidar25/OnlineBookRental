@@ -1,0 +1,22 @@
+.addBook{
+  @extend .updateAccountDetails;
+  input[type="reset"]{
+    display:inline;
+    margin-top:28px;
+    width:100px;
+  }
+    
+   select{
+    display:inline-block;
+    width:200px;
+  }
+  
+  label[for="bookCategory"]{
+    position:relative;
+    right:12px;
+  } 
+  
+  form{
+    margin-bottom:30px;
+  }
+}

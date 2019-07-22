@@ -1,0 +1,25 @@
+.booksHistory{
+	@extend .subscriptionHistory;
+	
+	input[type="text"]{
+	  width:100px;
+	}
+	
+	table{		
+		tbody{
+			
+			img{
+				height:150px;
+				width:100px;
+			}
+		}
+	}
+	
+	#subRequestsDialog{
+		@extend #userDetailsDialog;
+		div{
+			margin-top:150px;
+			width:85%;
+		}
+	}
+}

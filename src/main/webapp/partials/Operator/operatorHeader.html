@@ -1,0 +1,46 @@
+<div class="userHeader">
+	<header>
+		<div class="leftAlign logo">
+			<a ng-href="#/Operator/modifyRequest"><img src="images/Logo.png" width="290" height="60"/></a>
+		</div>
+		<div class="rightAlign rightSideHeader">
+			<div class="dropDown rightAlign">
+				<ul>
+					
+					<li><a href="javascript:void(0)">Welcome <span id="userName"></span><img ng-src="images/down-arrow.png" /></a>
+						<ul>
+							<li><a href="#/Operator/updateAccountDetails">Update Details</a></li>
+							<li><a href="#/Operator/changePassword">Change Password</a></li>
+							<li><a href="#/logout">Logout</a></li>
+						</ul>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="searchBar rightAlign" ng-controller="OperatorSearchHeaderController">
+				<form name="operatorSearchForm"  class="search" ng-submit="goSearch()" novalidate>
+					<select ng-model="searchFilter">
+						<option value="All" selected>All</option>
+						<option value="Title">Title</option>
+						<option value="Author">Author</option>
+						<option value="Category">Category</option>
+					</select> 
+					<input type="search" autocomplete="on" size="30" ng-model="searchString" placeholder="Search Here" title="Search Here on basis of title, author or category" onkeypress="return restrictSearchText(event)" required />
+					<input type="submit" ng-disabled="operatorSearchForm.$invalid" value="Search" />
+				</form>
+			</div>
+		</div>		
+		
+	</header>
+	<nav class="row">
+		<ul class="nav">
+			<li id="nav1"><a ng-href="#/Operator/modifyRequest">User Requests</a></li>
+			<li id="nav2"><a ng-href="#/Operator/books">Manage Books</a></li>
+			<li id="nav3"><a ng-href="#/Operator/reports">Reports</a></li>
+			<li id="nav4"><a ng-href="#/Operator/addOperator">Add New Operator</a></li>
+		</ul>
+	</nav>
+</div>
+<script type="text/javascript">
+	displayUserName("userName");
+</script>

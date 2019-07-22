@@ -1,0 +1,124 @@
+<div ng-controller="NavigationController">
+	<ng-include src="'partials/guestHeader.html'" onload="setActiveHeader('nav5')"></ng-include>
+</div>
+
+<div class="loginReg">
+	<div class="container">
+		<p class="msg">
+			<span id="msg"></span>
+		</p>
+		<div class="centerElements center">
+
+			<div class="formDiv" ng-controller="LoginController">
+
+				<form ng-submit="login()" accept-charset="utf-8">
+
+					<table class="verticalTable">
+						<tr>
+							<th colspan="2">Signin with your account</th>
+						</tr>
+						<tr>
+							<td>
+								<p>Email </p>
+							</td>
+							<td><input type="email" value=""
+								ng-model="user.userEmail" placeholder="someone@domain.com"
+								required /></td>
+						</tr>
+						<tr>
+							<td>
+								<p>Password </p>
+							</td>
+							<td><input type="password" value=""
+								ng-model="user.userPass" required /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="submit" value="Sign In" /></td>
+						</tr>
+						<tr>
+							<td colspan="2"><a ng-href="#/forgotPassword">Forgot
+									Password</a></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class="verticalLine"></div>
+			<div class="formDiv" ng-controller="RegisterController">
+				<form id="registerForm" ng-init="user.userRole='USER'" ng-submit="register()"
+					accept-charset="utf-8">
+					<table>
+						<tr>
+							<th colspan="2">Create new account</th>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									Name <span class="required">*</span> 
+								</p>
+							</td>
+							<td><input type="text" value=""
+								ng-model="user.userName" required /></td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									Email <span class="required">*</span> 
+								</p>
+							</td>
+							<td><input type="email" value=""
+								ng-model="user.userEmail" ng-blur="checkEmail()" placeholder="someone@domain.com"
+								required /></td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									Password <span class="required">*</span> 
+								</p>
+							</td>
+							<td><input type="password" value=""
+								ng-model="user.userPass" required /></td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									Confirm Password <span class="required">*</span> 
+								</p>
+							</td>
+							<td><input type="password" value=""
+								ng-model="user.confirmPass" ng-blur="checkPassword()" required /></td>
+						</tr>
+						<tr>
+							<td>
+								<p>Address </p>
+							</td>
+							<td>
+								<p>
+									<textarea name="userAddress" rows="5"
+										ng-model="user.userAddress"></textarea>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Contact No. </p>
+							</td>
+							<td><input type="tel" name="userContact"
+								onkeypress="return restrictContact(event)" value=""
+								ng-model="user.userContact" placeholder="10 digit contact no"
+								pattern="\d{10}" title="Enter your 10 digit contact no." /></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input type="submit" value="Sign Up" />
+								<input type="reset" value="Reset" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	trimWhiteSpace();
+</script>

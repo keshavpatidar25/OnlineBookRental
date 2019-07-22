@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="OnlineBookRental">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Book World</title>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="lib/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="lib/ngDialog.min.css" />
+	<link rel="stylesheet" type="text/css" href="lib/ngDialog-theme-default.min.css" />
+	<link rel="stylesheet" type="text/css" href="lib/ngDialog-theme-plain.min.css" />
+	<link rel="stylesheet" type="text/css" href="lib/ng-table.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+
+</head>
+<body>
+
+	<ng-view></ng-view>
+	
+	<footer class="row">
+		<div>
+			<span>Copyright &copy;2014 by Book World. All rights reserved.</span>
+			<a href="https://www.facebook.com" target="new"><img
+				src="images/fb.png"></a>
+		</div>
+	</footer>
+	<div id="httpLoadingProcessDiv" ng-show="httpLoad.showLoadingImg"><img ng-src="images/loading.gif"></div>
+	<div id="ajaxLoadingProcessDiv"><img ng-src="images/loading.gif"></div>
+	<!-- JS Libraries -->
+	<script src="lib/jquery-1.11.1.min.js"></script>
+	<script src="lib/jquery-ui.min.js"></script>
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/angular-route.min.js"></script>
+	<script src="lib/d3.min.js"></script>
+	<script src="lib/ngDialog.min.js"></script>
+	<script src="lib/ng-table.min.js"></script>
+	<script src="lib/ui-bootstrap-tpls-0.11.2.min.js"></script>
+	<script src="lib/FileSaver.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/bean/user.js"></script>
+	<script src="js/bean/mail.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/controllers/LoginController.js"></script>
+	<script src="js/controllers/RegisterController.js"></script>
+	<script src="js/controllers/NavigationController.js"></script>
+	<script src="js/controllers/ContactController.js"></script>
+	<script src="js/controllers/SubscriptionController.js"></script>
+	<script src="js/controllers/HomeController.js"></script>
+	<script src="js/controllers/SearchController.js"></script>
+	<script src="js/controllers/SearchCategoryController.js"></script>
+	<script src="js/controllers/SearchHeaderController.js"></script>
+	<script src="js/controllers/ForgotPasswordController.js"></script>
+	<script src="js/controllers/LogoutController.js"></script>
+	<script src="js/controllers/User/HomeController.js"></script>
+	<script src="js/controllers/User/HomeBooksDialogController.js"></script>
+	<script src="js/controllers/User/UserSubscriptionController.js"></script>
+	<script src="js/controllers/User/ActiveSubscriptionController.js"></script>
+	<script src="js/controllers/User/NewSubscriptionController.js"></script>
+	<script src="js/controllers/User/SubscriptionHistoryController.js"></script>
+	<script src="js/controllers/User/UserSearchController.js"></script>
+	<script src="js/controllers/User/UserSearchCategoryController.js"></script>
+	<script src="js/controllers/User/UserSearchHeaderController.js"></script>
+	<script src="js/controllers/User/UserBookController.js"></script>
+	<script src="js/controllers/User/CurrentlyHeldBooksController.js"></script>
+	<script src="js/controllers/User/BooksHistoryController.js"></script>
+	<script src="js/controllers/User/BookmarkController.js"></script>
+	<script src="js/controllers/User/RatingsDialogController.js"></script>
+	<script src="js/controllers/User/UpdateAccountDetailsController.js"></script>
+	<script src="js/controllers/User/ChangePasswordController.js"></script>
+	<script src="js/controllers/Operator/OperatorSearchHeaderController.js"></script>
+	<script src="js/controllers/Operator/ManageRequestController.js"></script>
+	<script src="js/controllers/Operator/ModifyRequestController.js"></script>
+	<script src="js/controllers/Operator/ActiveUsersController.js"></script>
+	<script src="js/controllers/Operator/OperatorBookController.js"></script>
+	<script src="js/controllers/Operator/AddBookController.js"></script>
+	<script src="js/controllers/Operator/ModifyBookController.js"></script>
+	<script src="js/controllers/Operator/AddOperatorController.js"></script>
+	<script src="js/controllers/Operator/ReportsController.js"></script>
+	<script src="js/controllers/Operator/ModifyBookDialogController.js"></script>
+	<script src="js/services/FetchBooksService.js"></script>
+	<script src="js/services/SearchSortService.js"></script>
+	<script src="js/services/SubscriptionService.js"></script>
+	<script src="js/services/BookmarkService.js"></script>
+	<script src="js/services/RequestBookService.js"></script>
+	<script src="js/services/MailService.js"></script>
+	
+</body>
+</html>

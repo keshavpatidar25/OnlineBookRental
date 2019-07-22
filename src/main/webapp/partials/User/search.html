@@ -1,0 +1,73 @@
+<ng-include src="'partials/User/userHeader.html'"></ng-include>
+<div class="userSearchPage">
+	<div class="container">
+		<div class="rightAlign">
+				<select ng-change="changeSort()" ng-model="sortBy" ng-init="sortBy='Most Popular'" ng-change="changeSort()">
+					<option value="Most Popular">Most Popular</option>
+					<option value="New Arrivals">New Arrivals</option>
+					<option value="Category Wise">Category Wise</option>
+				</select>
+		</div>
+		<div>
+			<h3 ng-hide="booksFound">No Books Found</h3>
+			<article class="booksResult" ng-hide="booksList.length==0">
+				<section class="booksHead">
+						<span class="bookNo">Book No</span>
+						<span class="bookCover">Book Cover</span>
+						<span class="bookTitle">Title</span>
+						<span class="bookAuthor">Author</span>
+						<span class="bookCategory">Category</span>
+						<span class="bookPublisher">Publisher</span>
+						<span class="bookDescription">Description</span>
+						<span class="bookAvailability">Availability</span>
+						<span class="bookAction">Action</span>
+				</section>
+
+				<section class="booksBody"> 
+					<section class="booksBodyCell" ng-repeat="book in booksList">
+						<span class="bookNo">
+							<a href="javascript:void(0);">
+								<img ng-src="images/bookmarkStar1.png" ng-show="isBookmarked[{{book.bookDetails.bookNo}}]" ng-click="removeBookmark($event)" data="{{book.bookDetails.bookNo}}" title="Click to Remove Bookmark" />
+								<img ng-src="images/bookmarkStar.png" width="10" height="10" ng-hide="isBookmarked[{{book.bookDetails.bookNo}}]" ng-click="addBookmark($event)" data="{{book.bookDetails.bookNo}}" title="Click to Add Bookmark"/>
+							</a>{{book.bookDetails.bookNo}}
+						</span>
+						<span class="bookCover"><img ng-src="data:image/png;base64,{{book.bookDetails.bookCover}}"></img></span>
+						<span class="bookTitle">{{book.bookDetails.bookTitle}}</span>
+						<span class="bookAuthor">{{book.bookDetails.bookAuthor}}</span>
+						<span class="bookCategory">{{book.bookDetails.bookCategory}}</span>
+						<span class="bookPublisher">{{book.bookDetails.bookPublisher}}</span>
+						<span class="bookDescription">{{book.bookDetails.bookDescription}}</span>
+						<span class="bookAvailability"><span ng-hide="isIssued[{{book.bookDetails.bookNo}}]">{{book.bookDetails.bookAvailability}}</span><span ng-show="isIssued[{{book.bookDetails.bookNo}}]">Issued</span></span>
+						<span class="bookAction">
+							<p>
+								<input type="button" ng-click="cancelIssue($event)" ng-show="bookRequestStatus[book.bookDetails.bookNo]=='DELIVERY PENDING'" value="Cancel Issue" data="{{book.bookDetails.bookNo}}"/>
+								<input type="button" ng-click="confirmDetails($event)" ng-show="bookRequestStatus[book.bookDetails.bookNo]=='RETURN NI/C'" value="Return Book" data="{{book.bookDetails.bookNo}}"/>
+								<input type="button" ng-click="cancelReturn($event)" ng-show="bookRequestStatus[book.bookDetails.bookNo]=='RETURN PENDING'" value="Cancel Return" data="{{book.bookDetails.bookNo}}"/>
+								<input type="button" ng-click="checkPlanValidity($event)" ng-show="bookRequestStatus[book.bookDetails.bookNo]!='DELIVERY PENDING' && bookRequestStatus[book.bookDetails.bookNo]!='RETURN NI/C' && bookRequestStatus[book.bookDetails.bookNo]!='RETURN PENDING'" ng-disabled="book.bookDetails.bookAvailability=='Not Available'" value="Issue Book" data="{{book.bookDetails.bookNo}}" />
+							</p>
+							<p>
+								<a href="javascript:void(0)" ng-click="showRatingsDialog($event)" data="{{book.bookDetails.bookNo}}">Write Review</a>
+							</p>
+						</span>
+					</section>
+				</section>
+			</article>
+		</div>
+	</div>
+	
+	<div id="userDetailsDialog" ng-show="showConfirmDetails">
+		<div>
+			<a href="javascript:void(0)" ng-click="hideConfirmDetailsDialog()"></a>
+			<h4>Confirm Your Details</h4>
+			<form name="confirmDetailsForm">
+				<p><label for="Address">Address<span class="required">*</span> : </label><textarea ng-model="userAddress" rows="5" cols="20" required></textarea></p>
+				<p><label for="Contact">Contact<span class="required">*</span> : </label><input ng-model="userContact" type="tel" pattern="\d{10}" placeholder="10 digit contact no" title="Enter your 10 digit Contact No." onkeypress="return restrictContact(event)" required /></p>
+	 	 		<p><input type="button" value="Confirm Issue" ng-disabled="confirmDetailsForm.$invalid || userContact.length!=10" ng-click="issueBook($event)"  ng-show="bookRequestStatus[bookNo]!='DELIVERY PENDING' && bookRequestStatus[bookNo]!='RETURN NI/C' && bookRequestStatus[bookNo]!='RETURN PENDING'" data="{{bookNo}}" />
+				<input type="button" value="Confirm Return" ng-disabled="confirmDetailsForm.$invalid || userContact.length!=10" ng-click="returnBook($event)" ng-show="bookRequestStatus[bookNo]=='RETURN NI/C'" data="{{bookNo}}"/></p>
+			</form>
+		</div>
+	</div>
+</div>
+<script>
+	trimWhiteSpace();
+</script>

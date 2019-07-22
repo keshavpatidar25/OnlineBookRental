@@ -1,0 +1,12 @@
+.bookmark{
+  @extend .userSearchPage;
+  @extend .userSearchPageCategory;
+  
+  .categories{
+    margin-top:0px;
+  }
+  
+  article.booksResult{
+    margin-top:0px;
+  }
+}

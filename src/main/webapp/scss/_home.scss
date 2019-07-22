@@ -1,0 +1,98 @@
+.guestHome {
+  .information .panel-body{
+    font-size:20px;
+    overflow:auto;
+  }
+  
+  .thumbnail{
+      @extend .leftAlign;
+      display:block;
+      font-size:14px;
+      margin:0px 1.2%;
+      width:10%;
+  }
+  
+  .thumbnail img{
+    height:150px;
+    width:100%;
+  }
+  
+  #booksTabs{
+      margin-top:2%;
+  }
+  
+  .ui-tabs .ui-tabs-panel{
+    height:220px;
+    text-align:center;
+    overflow:auto;
+  }
+  
+  .information{
+    margin-top:2%;
+  }
+  
+  .information li{
+    list-style:square;
+    padding-top:0.25%;    
+  }
+  
+  article.mainContainer>img{
+    width:100%;
+    height:280px;
+  }
+   
+  article{
+    overflow:auto;
+  }
+
+	.panel-body td{
+		text-align:left;
+	}
+
+	.login .panel-body *{
+		width:100%;
+	}
+
+	.login .halfWidth {
+		width:50%;
+		input[type="submit"]{
+		  margin:0px;
+		  padding:0px;
+		}
+	}
+
+	.login .halfWidth:nth-last-child(1){
+		text-align:right;
+	}
+
+	.login .center {
+		text-align:center;
+		padding-top:10px;
+	}
+}
+
+#bookDetailsDialog{
+  margin-top:15px;
+  .dialogImgDiv{
+    margin-right:50px;
+    width:200px;
+    img{
+      height:250px;
+      width:200px;
+    }  
+  }
+  
+  .dialogContentDiv{
+    font-size:20px;
+    text-align:justify;
+    width:400px;
+    span{
+      font-size:21px;
+      font-weight:bold;
+    }
+    p:first-of-type{
+      margin-top:0px;
+    }
+  }
+}  
+

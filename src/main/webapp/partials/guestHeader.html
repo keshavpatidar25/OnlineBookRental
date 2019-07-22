@@ -1,0 +1,25 @@
+<div class="guestHeader">
+	<header>
+		<a ng-href="#/"><img class="leftAlign" src="images/Logo.png" /></a>
+		<div class="rightAlign" ng-controller="SearchHeaderController">
+			<form name="guestSearchForm" class="search" ng-submit="goSearch()">
+				<select ng-model="searchFilter">
+					<option value="All" selected>All</option>
+					<option value="Title">Title</option>
+					<option value="Author">Author</option>
+					<option value="Category">Category</option>
+				</select> 
+				<input type="search" ng-model="searchString" autocomplete="on" size="35" placeholder="Search Here" title="Search Here on basis of title, author or category" onkeypress="return restrictSearchText(event)" required />
+				<input type="submit" ng-disabled="guestSearchForm.$invalid" value="Search" />
+			</form>
+		</div>
+	</header>
+	<nav class="row">
+		<ul class="nav">
+			<li id="nav1"><a ng-href="#/">Home</a></li>
+			<li id="nav2"><a ng-href="#/about">About Us</a></li>
+			<li id="nav3"><a ng-href="#/subscription">Subscription Plans</a></li>
+			<li id="nav4"><a ng-href="#/contact">Contact Us</a></li>
+		</ul>
+	</nav>
+</div>

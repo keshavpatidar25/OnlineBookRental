@@ -1,0 +1,60 @@
+<div ng-controller="NavigationController">
+	<ng-include src="'partials/Operator/operatorHeader.html'" onload="setActiveHeader('nav3')"></ng-include>
+</div>
+	<div class="container reports pagination">
+		<p ng-hide="message.length==0" class="msg"><span class="error">{{message}}</span></p>
+		<form ng-submit="generateReport()" class="paddedForm">
+			<label class="leftSpace" for="requestType">Generate Reports on basis of </label>
+			<select ng-model="report.requestType" ng-init="report.requestType='all'">
+				<option value="all">All Books</option>
+				<option value="title">Title</option>
+				<option value="author">Author</option>
+				<option value="category">Category</option>	
+			</select>
+			<input class="leftSpace" type="text" placeholder="Enter Title Here" ng-model="report.requestTitle" ng-show="report.requestType=='title'" />
+			<select class="leftSpace" ng-model="report.requestAuthor" ng-show="report.requestType=='author'">
+				<option ng-repeat="author in authorList" value="{{author}}">{{author}}</option>
+			</select>
+			<select class="leftSpace" ng-model="report.requestCategory" ng-show="report.requestType=='category'">
+				<option ng-repeat="category in categoryList" value="{{category}}">{{category}}</option>	
+			</select>
+			<input class="leftSpace" placeholder="From Date" type="text" id="fromDate" ng-model="fromDate" />
+			<input class="leftSpace" placeholder="To Date" type="text" id="toDate" ng-model="toDate" />
+			<input type="submit" class="leftSpace" value="Get Report"  ng-click="generateReports()"/>
+			<input type="submit" class="leftSpace" value="Generate PDF" ng-click="generatePdf()" ng-disabled="reportDetails.length==0" />
+		</form>
+		<div id="reportTabs" ng-hide="reportDetails.length==0">
+			<ul>
+				<li><a href="#reportTable">Report</a></li>
+				<li><a href="#reportGraph">Graph</a></li>
+			</ul>
+			<div id="reportTable">
+				<table ng-table="booksReportTable" show-filter="true">
+					<tr ng-repeat="book in $data">
+						<td data-title="'Book No'" sortable="'book.bookNo'" filter="{ 'bookNo' : 'text' }" >{{book.book.bookNo}}</td>
+						<td data-title="'Title'" sortable="'book.bookTitle'" filter="{ 'bookTitle' : 'text' }" >{{book.book.bookTitle}}</td>
+						<td data-title="'Author'" sortable="'book.bookAuthor'" ><span ng-hide="selectedIndex==2">{{book.book.bookAuthor}}</span><span ng-show="selectedIndex==2">{{selectedValue}}</span></td>
+						<td data-title="'Category'" sortable="'book.bookCategory'" ><span ng-hide="selectedIndex==3">{{book.book.bookCategory}}</span><span ng-show="selectedIndex==3">{{selectedValue}}</span></td>
+						<td data-title="'Issue Pending Count'" sortable="'issuePending'">{{book.issuePending}}</td>
+						<td data-title="'Issue Cancelled Count'" sortable="'issueCancelled'">{{book.issueCancelled}}</td>
+						<td data-title="'Issue Closed Count'" sortable="'issueClosed'">{{book.issueClosed}}</td>
+						<td data-title="'Return Pending Count'" sortable="'returnPending'">{{book.returnPending}}</td>
+						<td data-title="'Return Cancelled Count'" sortable="'returnCancelled'">{{book.returnCancelled}}</td>
+						<td data-title="'Return Closed Count'" sortable="'returnClosed'">{{book.returnClosed}}</td>
+					</tr>
+				</table>	
+			</div>
+			<div id="reportGraph">
+				<section>
+				</section>
+			</div>
+		</div>
+		<div ng-show="reportDetails.length==0 && !firstReportEntry"><h3>No Results</h3></div>
+	</div>
+	
+<script>
+	activateDatePicker("fromDate");
+	activateDatePicker("toDate");
+	enableTabs("reportTabs");
+	trimWhiteSpace();
+</script>

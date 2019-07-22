@@ -1,0 +1,77 @@
+.userSearchPage{
+  @extend .searchPage;
+  
+  article.booksResult{
+    .bookNo{
+        width:4%;
+        img{
+          height: 30px;
+          vertical-align: sub;
+          width: 30px;
+        }
+      }
+      
+      .bookCover{
+        width:6%;
+      }
+      
+      .bookTitle{
+        width:12%;
+      }
+      
+      .bookAuthor{
+        width:7%;
+      }
+      
+      .bookCategory{
+        width:7%;
+      }
+      
+      .bookPublisher{
+        width:6%;;
+      }
+      
+      .bookDescription{
+        width:22%;
+      }
+      
+      .bookAvailability{
+        width:9%;
+      }
+      
+      .bookAction{
+        width:12%;
+        p{
+          text-align:center;
+        }
+      }
+  }
+}
+
+.userSearchPageCategory{
+  @extend .searchPageCategory;
+  article.booksResult{
+    
+    section{
+      span{
+        word-wrap:break-word;
+      }
+    }
+    
+    .bookDescription{
+        width:20%;
+    }
+    
+    .bookAvailability{
+        width:8%;
+    }
+    
+    .bookCategory{
+        width:6%;
+    }
+    
+    .bookTitle{
+        width:11%;
+    }
+  }
+}

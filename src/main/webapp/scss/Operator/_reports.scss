@@ -1,0 +1,22 @@
+.reports{
+  @extend .subscriptionHistory;
+  
+  #fromDate, #toDate {
+    width: 100px;
+  }
+
+  .leftSpace{
+    margin: 0px 0px 0px 30px;
+  }
+  label{
+    padding : 0px 15px 0px 0px;
+  }
+  
+  .paddedForm{
+    padding:10px 0px;
+  }
+  
+  section{
+    text-align:center;
+  }
+}

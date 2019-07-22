@@ -1,0 +1,23 @@
+.userHome{
+  @extend .guestHome;
+  
+  .advertisement{
+    .panel-body{
+      height:225px;
+      img{
+        height:100%;
+        width:100%;
+      }  
+    }
+    
+  }
+}
+
+#bookDetailsDialog .btnsDiv{
+  @extend .clearFloat;
+  margin-bottom:20px;
+  text-align:center;
+  input+input{
+    margin-left:25px;
+  }
+}

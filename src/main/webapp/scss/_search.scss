@@ -1,0 +1,101 @@
+.searchPage{
+  
+   article.booksResult{
+      margin:50px auto 30px auto;
+      width:100%;
+      word-wrap:break-word;
+      
+      .booksHead{
+        background-color:#333333;
+        color:#fff;
+        font-size:bold;
+        width:100%;
+        
+        
+        span{
+          font-weight:bold;
+          text-align:center;
+        }
+        
+        span.bookTitle{
+          text-align:center;
+        }          
+        
+        span.bookDescription{
+          text-align:center;
+        }          
+       
+      }
+      img{
+          height:150px;
+          width:100%;
+      }
+      
+      span{
+        display:inline-block;
+        padding:2px 5px;
+        text-align:center;
+        vertical-align:middle;
+      }
+      
+      .booksBody{
+        max-height:670px;
+        overflow:auto;
+        width:100%;
+        
+        
+        .booksBodyCell:nth-of-type(even){
+          background-color:#EEE;
+        }
+      }
+      
+      .bookNo{        
+        width:5%;
+      }
+      
+      .bookCover{
+        width:7%;
+      }
+      
+      .bookTitle{
+        text-align:left;
+        width:13%;
+      }
+      
+      .bookAuthor{
+        width:8%;
+      }
+      
+      .bookCategory{
+        width:8%;
+      }
+      
+      .bookPublisher{
+        width:8%;;
+      }
+      
+      .bookDescription{
+        text-align:justify;
+        width:25%;
+      }
+      
+      .bookAvailability{
+        width:10%;
+      }
+    }
+}
+
+.searchPageCategory{
+  
+  .rightText{
+    text-align:right;  
+  }
+  
+  .categories{
+    margin-top:50px;
+    .panel-body{
+      max-height:none;
+    }
+  }
+  
+}

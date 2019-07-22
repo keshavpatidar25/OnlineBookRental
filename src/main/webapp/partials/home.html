@@ -1,0 +1,109 @@
+<div ng-controller="NavigationController">
+	<ng-include src="'partials/guestHeader.html'" onload="setActiveHeader('nav1')"></ng-include>
+</div>
+<div class="container guestHome">
+	<article class="leftContainer">
+		<section class="panel login">
+			<div class="panel-heading">
+				<h3>
+					Login
+				</h3>
+			</div>
+			<div class="panel-body" ng-controller="LoginController">
+				<form ng-submit="login()">
+				<table>
+					<tr><td colspan="2">Email</td></tr>
+					<tr><td colspan="2"><input type="email" placeholder="someone@domain.com" ng-model="user.userEmail" required autofocus /></td></tr>
+					<tr><td colspan="2">Password</td></tr>
+					<tr><td colspan="2"><input type="password" ng-model="user.userPass" required /></td></tr>
+					<tr><td class="halfWidth"><a ng-href="#/login">SignUp</a></td>
+						<td class="halfWidth rightTextAlign"><input type="submit" value="Sign In" /></td></tr>
+					<tr><td colspan="2" class="center"><a ng-href="#/forgotPassword">Forgot Password</a></td></tr>
+				</table>
+				</form>
+			</div>
+		</section>
+		
+		<section class="panel categories">
+			<div class="panel-heading">
+				<h3>
+					Book Categories
+				</h3>
+			</div>
+			<div class="panel-body">
+				<ul id="bookCategories">
+					<li ng-repeat="bookCategory in bookCategories"><a ng-href="#/searchCategory/searchString/{{bookCategory}}">{{bookCategory}}</a></li>
+				</ul>
+			</div>
+		</section>
+		<section>
+			<video width="100%" height="150px" controls="">
+				<source type="video/mp4" src="video/book.mp4"></source>
+				Your browser does not support HTML5 video element.
+			</video>
+		</section>
+		
+	</article>
+	<article class="mainContainer">
+		<img ng-src="images/home-img.jpg" />
+		<section>
+			
+			<div id="booksTabs">
+				<ul>
+					<li><a href="#newArrivalTab">New Arrivals</a></li>
+					<li><a href="#mostPopularTab">Most Popular</a></li>
+	
+				</ul>
+				<div id="newArrivalTab">
+					<div class="thumbnail" ng-repeat="newBook in newlyArrivedBooksList">
+						<a href="javascript:void(0)" ng-click="showBookDetails(newBook.bookNo)">
+							<img alt="Image" ng-src="data:image/png;base64,{{newBook.bookCover}}" />
+						</a>
+						<div class="caption">
+							<p>
+								{{newBook.bookTitle}} 
+							</p>	
+							<p>
+								{{newBook.bookAuthor}}
+							</p>	
+						</div>
+					</div>
+				</div>
+				<div id="mostPopularTab">
+					<div class="thumbnail" ng-repeat="popularBook in mostPopularBooksList">
+						<a href="javascript:void(0)" ng-click="showBookDetails(popularBook.bookNo)">
+							<img alt="Image" ng-src="data:image/png;base64,{{popularBook.bookCover}}" />
+						</a>
+						<div class="caption">
+							<p>
+								{{popularBook.bookTitle}} 
+							</p>	
+							<p>
+								{{popularBook.bookAuthor}}
+							</p>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="panel information">
+			<div class="panel-heading">
+				<h3>
+					Information
+				</h3>
+			</div>
+			<div class="panel-body">
+				<ul>
+					<li ng-repeat="info in information">{{info}}</li>					
+				</ul>
+			</div>
+		</section>
+		
+	</article>
+</div>
+
+<script>
+	enableTabs("booksTabs");			//Function To Enable JQuery UI Tabs
+	trimWhiteSpace();
+</script>

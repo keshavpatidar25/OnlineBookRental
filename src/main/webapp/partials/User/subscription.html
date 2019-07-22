@@ -1,0 +1,31 @@
+<div class="newSubscription" ng-controller="NewSubscriptionController">		
+	<p class="msg"><span id="msg"></span></p>	
+	<article class="center" ng-controller="SubscriptionController">
+		<section class="panel centerElements" ng-repeat="plan in plans | orderBy:'planPrice'">
+			<div class="panel-heading">
+				<h2>{{plan.planId}}</h2>
+			</div>
+			<div class="panel-body">
+				<p>₹ <span class="imp">{{plan.planPrice}}</span> / <span class="imp">{{plan.planValidity}}</span> Month</p>
+				<p>No. of Books that can be issued at a time: <span class="imp">{{plan.noOfBooksAllowed}}</span></p>
+				<p><button ng-click="addNewPlan($event)" data="{{plan.planId}}">Subscribe</button></p>
+			</div>
+		</section>
+	</article>
+</div>
+
+<div class="activeSubscription" ng-controller="ActiveSubscriptionController">			
+	<article class="center">
+		<section class="panel centerElements">
+			<div class="panel-heading">
+				<h2>{{plan.planId}}</h2>
+			</div>
+			<div class="panel-body">
+				<p>₹ <span class="imp">{{plan.planPrice}}</span> / <span class="imp">{{plan.planValidity}}</span> Month</p>
+				<p>No. of Books that can be issued at a time: <span class="imp">{{plan.noOfBooksAllowed}}</span></p>
+				<p>Plan Start Date: <span class="imp">{{plan.planStartDate | date:'dd/MMM/yyyy'}}</span></p>
+				<p>Plan End Date: <span class="imp">{{plan.planEndDate | date:'dd/MMM/yyyy'}}</span></p>
+			</div>
+		</section>
+	</article>
+</div>
